@@ -17,7 +17,7 @@ public class MovePlayer : MonoBehaviour
     //correr
     [SerializeField] private float velocidadSprint = 0.5f;    //Se refiere a cuanto sera el aumento de velocidad al correr (en %)
     private bool corriendo = false;
-    private float correrStamina = 20; //establece cuanta stamina conume correr
+    [SerializeField] private float correrStamina = 20; //establece cuanta stamina conume correr
 
     //agacharse
     [SerializeField] private float velocidadAgachar = 0.3f;    //Se refiere a cuanto sera la disminucion de velocidad al agacharse (en %) 
@@ -38,7 +38,7 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] private float dashDuracion = 0.5f;
     [SerializeField] private float dashCooldown = 1f;
     private Vector3 dashDireccion;
-
+    [SerializeField] private float dashStamina = 30;
 
     //SALTO
     [SerializeField] private float fuerzaSalto = 1;
@@ -62,7 +62,9 @@ public class MovePlayer : MonoBehaviour
     private float maxStamina = 100;
     private float staminaActual;
     public Slider barraStamina;
-    
+    public float staminaCooldown = 3f;
+    private WaitForSeconds regenarVelocidad = new WaitForSeconds(0.05f);//determina la velocidad del llenado de la barra
+    private Coroutine regenerando;
 
     // Start is called before the first frame update
     void Start()
@@ -124,25 +126,40 @@ public class MovePlayer : MonoBehaviour
 
         //detecta cuando se esta corriendo
 
-        if (staminaActual > 0 ) // solo se puede correr cuabdo la stamina es mayor a 0 
+        if (Input.GetButtonDown("Sprint") && agachado == false && staminaActual > 0
+            )//solo se puede correr cuando no esta agachado 
         {
-            if (Input.GetButtonDown("Sprint") && agachado == false)//solo se puede correr cuando no esta agachado 
-            {
-                corriendo = true;
-            }
-            if (Input.GetButtonUp("Sprint") && agachado == false)
-            {
-                corriendo = false;
-            }
+            corriendo = true;
         }
-        else { Debug.Log("no hay stamina"); }
+        if (Input.GetButtonUp("Sprint") && agachado == false)
+        {
+            corriendo = false;
+        }
         
 
         //dectecta cuando se hace el dash
-        if (Input.GetButtonDown("Dash") && dashDisponible)
+        if (Input.GetButtonDown("Dash") && dashDisponible && staminaActual > 0)//solo se detecta el dash si esta disponible y la estamina es mayor a 0
         {
             StartCoroutine(Dash());
+            staminaActual -= dashStamina;
+
+            barraStamina.value = staminaActual;  // la estamina se consume el equivalente al costo de dashear 
+            if (regenerando != null)
+            {
+                StopCoroutine(regenerando);
+            }
+            regenerando = StartCoroutine(RegenararStamina());//instacia la corutina
+
+        }  
+        if (barraStamina.value < 0) //rgeracion de barra de stamina cuando llega 0
+        {
+            if (regenerando != null)
+            {
+                StopCoroutine(regenerando);
+            }
+            regenerando = StartCoroutine(RegenararStamina());//instacia la corutina
         }
+        Debug.Log(staminaActual);
     }
 
     private void FixedUpdate()//FISICAS
@@ -160,12 +177,17 @@ public class MovePlayer : MonoBehaviour
              v);  //eje z
 
         //Modificacion de la velocidad del jugador en basa a si esta corriendo, agachado o caminando
-        if (corriendo && direccion.magnitude > 0.1f && barraStamina.value > 0)//detecta cuabdo se presion el boton de strpint(left shift) y evita gastar stamina si no se esta en movimiento 
+        if (corriendo && direccion.magnitude > 0.1f && staminaActual > 0)//detecta cuabdo se presion el boton de strpint(left shift) y evita gastar stamina si no se esta en movimiento 
         {
             rb.MovePosition(rb.position + direccion.normalized * (velocidadMovimiento * (1 + velocidadSprint)) * Time.fixedDeltaTime);//movimento al correr
             staminaActual -= correrStamina * Time.deltaTime;// cada segundo se consume la estamina equivalente al costo de correr (en este caso es 25, por lo cual puede correr por 4s)
             barraStamina.value = staminaActual;
-            Debug.Log(staminaActual + "corriendo");
+            if (regenerando != null) 
+            {
+                StopCoroutine(regenerando);
+            }
+            regenerando = StartCoroutine(RegenararStamina());//instacia la corutina
+
         }
         else if (agachado)//velocidad al agacharse
         {
@@ -234,6 +256,20 @@ public class MovePlayer : MonoBehaviour
         yield return new WaitForSeconds(dashCooldown);
 
         dashDisponible = true;
-        Debug.Log("dash disponible");
+        Debug.Log("dash disponible estamina actual" + barraStamina.value); ;
+
+    }
+
+    private IEnumerator RegenararStamina() 
+    { 
+        yield return new WaitForSeconds(staminaCooldown);// se espera el timepo en staminacooldoown antes de empezar a regenerarla
+
+        while (staminaActual < maxStamina)//relenar barra de stamina
+        {
+            staminaActual += maxStamina / 100;
+            barraStamina.value = staminaActual;
+            yield return regenarVelocidad;
+        }
+        regenerando = null;
     }
 }
