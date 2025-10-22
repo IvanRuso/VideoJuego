@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Suelo
+  - FxTemporaire
+  - Granada
+  - ProyectilGranada
+  - ScreenEffect
   layers:
   - Default
   - TransparentFX
@@ -12,7 +16,7 @@ TagManager:
   - Suelo
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 

@@ -10,9 +10,20 @@ public class EscudoContador : MonoBehaviour
     public int EscudosJugador = 0;
 
     private VidaPlayer EscudoJugador;
+    private FullScreenController FullScreenController;
     // Start is called before the first frame update
     void Start()
     {
+        GameObject playerObject = GameObject.FindGameObjectWithTag("ScreenEffect");
+        if (playerObject != null)
+        {
+            FullScreenController = playerObject.GetComponent<FullScreenController>();
+        }
+        else
+        {
+            Debug.LogError("No se encontro un objeto con la etiqueta 'Player' que tenga el script VidaJugador");
+        }
+
         EscudoJugador = GetComponent<VidaPlayer>();
         ActualizarPantalla();
     }
@@ -24,6 +35,7 @@ public class EscudoContador : MonoBehaviour
         {
             RecuperarEscudo();
         }
+        
     }
     private void RecuperarEscudo()
     {
@@ -38,7 +50,8 @@ public class EscudoContador : MonoBehaviour
         if (Curado)
         {
             EscudosJugador--;
-            ActualizarPantalla();;
+            ActualizarPantalla();
+            StartCoroutine(FullScreenController.Status(2));
         }
     }
 

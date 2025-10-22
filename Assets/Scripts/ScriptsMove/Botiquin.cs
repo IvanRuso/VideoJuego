@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class Botiquin : MonoBehaviour
 {
-    //full screen controller
-    public FullScreenController FullScreenController;
     public TextMeshProUGUI Botiquines;
     public int CantidadBotiquines = 3;
     private VidaPlayer vidaJugador;
+
+    
+    
+
     void Start()
     {
         ActualizarPantalla();
@@ -24,15 +27,15 @@ public class Botiquin : MonoBehaviour
         {
             Debug.LogError("No se encontro un objeto con la etiqueta 'Player' que tenga el script VidaJugador");
         }
+
+       
     }
     void Update()
     {
-        
 
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
         {
             UsarBotiquin();
-            //FullScreenController.estado = 1;
         }
     }
     private void UsarBotiquin()
@@ -65,8 +68,10 @@ public class Botiquin : MonoBehaviour
             Debug.LogError("El TextMeshProUGUI no esta asignado en el Inspector.");
         }
     }
-
+    
 }
+
+    
 //private Mensaje mensajePantalla;
 
 /*GameObject playerObject2 = GameObject.FindGameObjectWithTag("mensaje");

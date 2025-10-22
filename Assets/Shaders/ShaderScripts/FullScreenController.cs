@@ -18,7 +18,9 @@ public class FullScreenController : MonoBehaviour
     [SerializeField] private Material material;
     [SerializeField] private Material[] materials;
 
-
+   
+    
+    
 
     [Header("Stats de Intensidad")]
     [SerializeField] private float voronolIntensityStat = 2.5f;
@@ -26,7 +28,6 @@ public class FullScreenController : MonoBehaviour
 
     private int voronolIntensity = Shader.PropertyToID("_VoronolIntensity");
     private int vignetteIntensity = Shader.PropertyToID("_VignetteIntensity");
-    public int estado = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -39,39 +40,64 @@ public class FullScreenController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*switch (estado)
+        
+    }
+
+    public IEnumerator Status(int estado)
+    {
+        switch (estado)
         {
             case 1:
-                StartCoroutine(heal());
+                material = materials[0];
+                fullScreenHeal.SetActive(true);
                 break;
             case 2:
-                StartCoroutine(shield());
+                material = materials[1];
+                fullScreenShield.SetActive(true);
                 break;
             case 3:
-                StartCoroutine(damage());
+                material = materials[2];
+                fullScreenDamage.SetActive(true);
                 break;
             default:
                 break;
-        }*/
+        }
+        material.SetFloat(voronolIntensity, voronolIntensityStat);
+        material.SetFloat(vignetteIntensity, vignetteIntensityStat);
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        yield return new WaitForSeconds(healDisplayTime);
+
+        float elapsedTime = 0f;
+        while (elapsedTime < healFadeOutTime)
         {
-            StartCoroutine(heal());
+            elapsedTime += Time.deltaTime;
+
+            float LerpedVonorol = Mathf.Lerp(voronolIntensityStat, 0f, (elapsedTime / healFadeOutTime));
+            float LerpedVignette = Mathf.Lerp(vignetteIntensityStat, 0f, (elapsedTime / healFadeOutTime));
+            material.SetFloat(voronolIntensity, LerpedVonorol);
+            material.SetFloat(vignetteIntensity, LerpedVignette);
+
+            yield return null;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        switch (estado)
         {
-            StartCoroutine(shield());
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            StartCoroutine(damage());
+            case 1:
+                fullScreenHeal.SetActive(false);
+                break;
+            case 2:
+                fullScreenShield.SetActive(false);
+                break;
+            case 3:
+                fullScreenDamage.SetActive(false);
+                break;
+            default:
+                break;
         }
     }
 
-
    
 
-    private IEnumerator heal()
+    /*private IEnumerator heal()
     {
         material = materials[0];
         fullScreenHeal.SetActive(true);
@@ -92,8 +118,9 @@ public class FullScreenController : MonoBehaviour
 
             yield return null;
         }
-        estado = 0;
         fullScreenHeal.SetActive(false);
+       
+        coroutine = null;
     }
 
     private IEnumerator shield()
@@ -144,5 +171,5 @@ public class FullScreenController : MonoBehaviour
         }
 
         fullScreenDamage.SetActive(false);
-    }
+    }*/
 }

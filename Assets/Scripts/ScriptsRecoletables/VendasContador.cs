@@ -10,9 +10,20 @@ public class VendasContador : MonoBehaviour
     public int VendasJugador = 0;
 
     private VidaPlayer CorazonesJugador;
+    private FullScreenController FullScreenController;
     // Start is called before the first frame update
     void Start()
     {
+        GameObject playerObject = GameObject.FindGameObjectWithTag("ScreenEffect");
+        if (playerObject != null)
+        {
+            FullScreenController = playerObject.GetComponent<FullScreenController>();
+        }
+        else
+        {
+            Debug.LogError("No se encontro un objeto con la etiqueta 'Player' que tenga el script VidaJugador");
+        }
+
         CorazonesJugador = GetComponent<VidaPlayer>();
         ActualizarPantalla();
     }
@@ -39,7 +50,8 @@ public class VendasContador : MonoBehaviour
         if (Curado)
         {
             VendasJugador--;
-            ActualizarPantalla(); ;
+            ActualizarPantalla();
+            StartCoroutine(FullScreenController.Status(1));
         }
     }
 

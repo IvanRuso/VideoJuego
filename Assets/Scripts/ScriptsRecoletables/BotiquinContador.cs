@@ -10,9 +10,21 @@ public class BotiquinContador : MonoBehaviour
     public int BotiquinJugador = 0;
 
     private VidaPlayer CorazonesJugador;
+    private FullScreenController FullScreenController;
+
     // Start is called before the first frame update
     void Start()
     {
+        GameObject playerObject = GameObject.FindGameObjectWithTag("ScreenEffect");
+        if (playerObject != null)
+        {
+            FullScreenController = playerObject.GetComponent<FullScreenController>();
+        }
+        else
+        {
+            Debug.LogError("No se encontro un objeto con la etiqueta 'Player' que tenga el script VidaJugador");
+        }
+
         CorazonesJugador = GetComponent<VidaPlayer>();
         ActualizarPantalla();
     }
@@ -23,6 +35,7 @@ public class BotiquinContador : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
         {
             RecuperarVida();
+
         }
     }
 
@@ -39,7 +52,8 @@ public class BotiquinContador : MonoBehaviour
         if (Curado)
         {
             BotiquinJugador--;
-            ActualizarPantalla();;
+            ActualizarPantalla();
+            StartCoroutine(FullScreenController.Status(1));
         }
     }
 

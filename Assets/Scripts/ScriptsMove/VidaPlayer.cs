@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class VidaPlayer : MonoBehaviour
 {
-   
-
     //Puntos de vida
     public Image[] Corazones;
     public int VidaMaxima = 3;
@@ -17,14 +15,88 @@ public class VidaPlayer : MonoBehaviour
     public int EscudoMaxima = 2;
     public int Escudo = 2;
 
-
+    private FullScreenController FullScreenController;
 
     void Start()
     {
+        GameObject playerObject = GameObject.FindGameObjectWithTag("ScreenEffect");
+        if (playerObject != null)
+        {
+            FullScreenController = playerObject.GetComponent<FullScreenController>();
+        }
+        else
+        {
+            Debug.LogError("No se encontro un objeto con la etiqueta 'Player' que tenga el script VidaJugador");
+        }
 
         VidaActual();
     }
 
+    //Prueba
+    public void Daño(int Cantidad)
+    {
+        if (Escudo >= 1)
+        {
+            Escudo -= Cantidad;
+            StartCoroutine(FullScreenController.Status(3));
+        }
+        else
+        {
+            Vida -= Cantidad;
+            StartCoroutine(FullScreenController.Status(3));
+        }
+
+        if (Vida < 0)
+        {
+            Vida = 0;
+        }
+        if (Escudo < 0)
+        {
+            Escudo = 0;
+        }
+
+
+        VidaActual();
+
+        /*int EscudoDaño = Cantidad;
+
+        if (Escudo > 0)
+        {
+            Escudo -= EscudoDaño;
+            Debug.Log("Daño recibido al Escudo. Escudo actual: " + Escudo);
+
+            if (Escudo < 0)
+            {
+                EscudoDaño = Mathf.Abs(Escudo); // Lo que queda de daño
+                Escudo = 0;
+            }
+            else
+            {
+                EscudoDaño = 0; // Todo el daño fue absorbido por el escudo
+            }
+        }
+
+        // 2. Aplicar el daño restante a la Vida
+        if (EscudoDaño > 0)
+        {
+            Vida -= EscudoDaño;
+            Debug.Log("Daño recibido a la Vida. Vida actual: " + Vida);
+        }
+
+        // 3. Chequear el límite de vida y actualizar UI
+        if (Vida < 0)
+        {
+            Vida = 0;
+        }
+
+        VidaActual(); // Llama a tu función para actualizar los corazones/escudos en la UI
+
+        if (Vida == 0)
+        {
+            Debug.Log("Sin vida (muerte)");
+            // Aquí va tu código de muerte
+        }*/
+    } //Prueba
 
     private void VidaActual()
     {
@@ -66,6 +138,7 @@ public class VidaPlayer : MonoBehaviour
 
         Vida += amount;
 
+
         if (Vida > VidaMaxima)
         {
             Vida = VidaMaxima;
@@ -102,38 +175,34 @@ public class VidaPlayer : MonoBehaviour
         Debug.Log("Escudo Regenerado. Escudo actual: " + Vida);
         return true;
     }
-
-    public void damage(int amount)
-    {
-        if (Escudo >= 1)
+    /*private void OnParticleCollision(GameObject other)
         {
-            Escudo -= amount;
+            int Particulas = 1;
+            damage(Particulas);
+
+            Debug.Log("Player fue golpeado por partícula de Electricidad!");
         }
-        else
+    /*
+        public void damage(int amount)
         {
             Vida -= amount;
-        }
 
-        if (Vida < 0)
-        {
-            Vida = 0;
-        }
-        if (Escudo < 0)
-        {
-            Escudo = 0;
-        }
+            if (Vida < 0)
+            {
+                Vida = 0;
+            }
 
 
-        VidaActual();
-    }
+            VidaActual();
 
-    //testing damage
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            damage(1);
+            Debug.Log("Vida Perdida. Vida actual: " + Vida);
+
+            if (Vida == 0)
+            {
+
+                Debug.Log("Sin vida");
+            }
         }
-    }
+        */
 
 }
