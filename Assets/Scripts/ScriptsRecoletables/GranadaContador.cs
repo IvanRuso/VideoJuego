@@ -8,6 +8,13 @@ public class GranadaContador : MonoBehaviour
 {
     public TextMeshProUGUI Granadas;
     public int GranadasJugador = 0;
+
+    //Prueba
+    public GameObject GranadaPrefab;
+    public Transform PuntoLanzamiento;
+    public float FLanzamiento = 5f;
+
+    public float Explosion = 3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +41,32 @@ public class GranadaContador : MonoBehaviour
 
         if (GranadasJugador >= 0)
         {
+            if(GranadaPrefab == null)
+            {
+                return;
+            }
+            Vector3 PosicionSpawn = (PuntoLanzamiento != null) ? PuntoLanzamiento.position : transform.position;
+
+            //Prueba Granada Nueva
+            GameObject GranadaNueva = Instantiate(
+                GranadaPrefab,
+                PosicionSpawn,
+                Quaternion.identity
+                );
+
+            GranadaNueva.tag = "ProyectilGranada";
+            Destroy(GranadaNueva.GetComponent<Granadas>());
+
+            Rigidbody rb = GranadaNueva.GetComponent<Rigidbody>();
+            if (rb!=null)
+            {
+                rb.AddForce(transform.forward * FLanzamiento, ForceMode.Impulse);
+            }
+
+            Destroy(GranadaNueva, Explosion);
+
+            //Termina Prueba
+
             GranadasJugador--;
             ActualizarPantalla();
 

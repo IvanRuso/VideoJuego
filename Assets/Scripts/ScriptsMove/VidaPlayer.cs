@@ -23,6 +23,48 @@ public class VidaPlayer : MonoBehaviour
         VidaActual();
     }
 
+    //Prueba
+    public void Daño(int Cantidad)
+    {
+        int EscudoDaño = Cantidad;
+
+        if (Escudo > 0)
+        {
+            Escudo -= EscudoDaño;
+            Debug.Log("Daño recibido al Escudo. Escudo actual: " + Escudo);
+
+            if (Escudo < 0)
+            {
+                EscudoDaño = Mathf.Abs(Escudo); // Lo que queda de daño
+                Escudo = 0;
+            }
+            else
+            {
+                EscudoDaño = 0; // Todo el daño fue absorbido por el escudo
+            }
+        }
+
+        // 2. Aplicar el daño restante a la Vida
+        if (EscudoDaño > 0)
+        {
+            Vida -= EscudoDaño;
+            Debug.Log("Daño recibido a la Vida. Vida actual: " + Vida);
+        }
+
+        // 3. Chequear el límite de vida y actualizar UI
+        if (Vida < 0)
+        {
+            Vida = 0;
+        }
+
+        VidaActual(); // Llama a tu función para actualizar los corazones/escudos en la UI
+
+        if (Vida == 0)
+        {
+            Debug.Log("Sin vida (muerte)");
+            // Aquí va tu código de muerte
+        }
+    } //Prueba
 
     private void VidaActual()
     {
@@ -101,26 +143,34 @@ public class VidaPlayer : MonoBehaviour
         Debug.Log("Escudo Regenerado. Escudo actual: " + Vida);
         return true;
     }
-
-    public void damage(int amount)
-    {
-        Vida -= amount;
-
-        if (Vida < 0)
+    /*private void OnParticleCollision(GameObject other)
         {
-            Vida = 0;
+            int Particulas = 1;
+            damage(Particulas);
+
+            Debug.Log("Player fue golpeado por partícula de Electricidad!");
         }
-
-
-        VidaActual();
-
-        Debug.Log("Vida Perdida. Vida actual: " + Vida);
-
-        if (Vida == 0)
+    /*
+        public void damage(int amount)
         {
+            Vida -= amount;
 
-            Debug.Log("Sin vida");
+            if (Vida < 0)
+            {
+                Vida = 0;
+            }
+
+
+            VidaActual();
+
+            Debug.Log("Vida Perdida. Vida actual: " + Vida);
+
+            if (Vida == 0)
+            {
+
+                Debug.Log("Sin vida");
+            }
         }
-    }
+        */
 
 }
