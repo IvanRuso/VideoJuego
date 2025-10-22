@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class VidaPlayer : MonoBehaviour
 {
+   
+
     //Puntos de vida
     public Image[] Corazones;
     public int VidaMaxima = 3;
@@ -64,7 +66,6 @@ public class VidaPlayer : MonoBehaviour
 
         Vida += amount;
 
-
         if (Vida > VidaMaxima)
         {
             Vida = VidaMaxima;
@@ -104,22 +105,34 @@ public class VidaPlayer : MonoBehaviour
 
     public void damage(int amount)
     {
-        Vida -= amount;
+        if (Escudo >= 1)
+        {
+            Escudo -= amount;
+        }
+        else
+        {
+            Vida -= amount;
+        }
 
         if (Vida < 0)
         {
             Vida = 0;
         }
+        if (Escudo < 0)
+        {
+            Escudo = 0;
+        }
 
 
         VidaActual();
+    }
 
-        Debug.Log("Vida Perdida. Vida actual: " + Vida);
-
-        if (Vida == 0)
+    //testing damage
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-
-            Debug.Log("Sin vida");
+            damage(1);
         }
     }
 

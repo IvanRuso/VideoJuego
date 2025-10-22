@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class Botiquin : MonoBehaviour
 {
+    //full screen controller
+    public FullScreenController FullScreenController;
     public TextMeshProUGUI Botiquines;
     public int CantidadBotiquines = 3;
     private VidaPlayer vidaJugador;
@@ -25,10 +27,12 @@ public class Botiquin : MonoBehaviour
     }
     void Update()
     {
+        
 
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
         {
             UsarBotiquin();
+            //FullScreenController.estado = 1;
         }
     }
     private void UsarBotiquin()
