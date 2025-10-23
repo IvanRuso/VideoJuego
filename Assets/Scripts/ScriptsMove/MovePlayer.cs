@@ -101,7 +101,7 @@ public class MovePlayer : MonoBehaviour
                 radioDetectorsuelos,        //radio de detecion del suelo
                 capaSuelo);                 //solo regresa respuesta si la esfera toca algo       
 
-        if (Input.GetButtonUp("Jump")) // registra cuando el boton de salto dejo de ser pulsado
+        /*if (Input.GetButtonUp("Jump")) // registra cuando el boton de salto dejo de ser pulsado
         {
             tiempoSaltando = 0;
             if (numeroSalto < maxSaltos) //si el numero de saltos que dio el personaje es nemor a la cantidad de saltos maximos pertidos antes de tocar el suelo (evita que se agregen saltos extra a los permitidos)
@@ -112,7 +112,7 @@ public class MovePlayer : MonoBehaviour
         if (tocandoSuelo == true)
         {  //reinicia la cantidad de saltos dados por el usuario cuando toca el suelo
             numeroSalto = 0;
-        }
+        }*/
 
         //detecta cuando se esta agachado
         if (Input.GetButtonDown("Crouch"))

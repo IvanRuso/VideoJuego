@@ -25,7 +25,7 @@ public class Cofre : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetButtonDown("Fire2"))
             {
                 AbrirCofre();
             }

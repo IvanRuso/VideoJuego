@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class VidaPlayer : MonoBehaviour
@@ -8,7 +9,7 @@ public class VidaPlayer : MonoBehaviour
     //Puntos de vida
     public Image[] Corazones;
     public int VidaMaxima = 3;
-    public int Vida = 3;
+    private int Vida = 3;
 
     //Puntos de escudo
     public Image[] Escudos;
@@ -54,6 +55,8 @@ public class VidaPlayer : MonoBehaviour
         {
             Escudo = 0;
         }
+
+
 
 
         VidaActual();
@@ -204,5 +207,14 @@ public class VidaPlayer : MonoBehaviour
             }
         }
         */
+    void Update()
+    {
+        if(Vida == 0)
+        {
+            string sceneName = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        }
+        
+    }
 
 }
