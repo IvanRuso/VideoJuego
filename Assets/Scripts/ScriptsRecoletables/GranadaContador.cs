@@ -53,13 +53,23 @@ public class GranadaContador : MonoBehaviour
                 PosicionSpawn,
                 Quaternion.identity
                 );
-
+           
             GranadaNueva.tag = "ProyectilGranada";
             Destroy(GranadaNueva.GetComponent<Granadas>());
+
+            //Prueba
+            GranadaExplosion Efecto = GranadaNueva.GetComponent<GranadaExplosion>();
+
+            if (Efecto != null)
+            {
+                Efecto.Explota = true;
+            }
+            //Prueba
 
             Rigidbody rb = GranadaNueva.GetComponent<Rigidbody>();
             if (rb!=null)
             {
+                rb.useGravity = true;
                 rb.AddForce(transform.forward * FLanzamiento, ForceMode.Impulse);
             }
 
