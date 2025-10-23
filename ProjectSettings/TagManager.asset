@@ -9,6 +9,11 @@ TagManager:
   - Granada
   - ProyectilGranada
   - ScreenEffect
+  - ROVINE
+  - MURO
+  - VisionRovine
+  - ROVICA
+  - VisionRovica
   layers:
   - Default
   - TransparentFX
@@ -17,7 +22,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - Muro
   - 
   - 
   - 
