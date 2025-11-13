@@ -33,14 +33,14 @@ public class MovePlayer : MonoBehaviour
 
     //dash
     private bool dashDisponible = true;
-    private bool dash;
-    [SerializeField] private float dashFuerza = 15f;
-    [SerializeField] private float dashDuracion = 0.5f;
+    private bool dash = false;
+    [SerializeField] private float dashFuerza = 5f;
+    [SerializeField] private float dashDuracion = 1f;
     [SerializeField] private float dashCooldown = 1f;
     private Vector3 dashDireccion;
     [SerializeField] private float dashStamina = 30;
 
-    //SALTO
+    /*SALTO
     [SerializeField] private float fuerzaSalto = 1;
     private bool quiereSaltar = false;
 
@@ -55,7 +55,7 @@ public class MovePlayer : MonoBehaviour
 
     [SerializeField] public static int maxSaltos = 1;    //cuantos saltos podemos hacer antes de tocar el suelo
     private int numeroSalto; //cuantos saltos ha hecho el personaje antes de tocar el suelo
-
+    */
     //ELEMNETOS DE INTERFAZ
 
     //barra de stamina
@@ -65,6 +65,12 @@ public class MovePlayer : MonoBehaviour
     public float staminaCooldown = 3f;
     private WaitForSeconds regenarVelocidad = new WaitForSeconds(0.05f);//determina la velocidad del llenado de la barra
     private Coroutine regenerando;
+
+    //controlador de animaciones
+    private Vector2 spriteDirection;
+    private Vector2 LastspriteDirection;
+    [SerializeField] Animator animator;
+    [SerializeField] SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -89,10 +95,10 @@ public class MovePlayer : MonoBehaviour
 
         //detccion del movimiento horizontal y vertical
         h = Input.GetAxisRaw("Horizontal"); // lee los controles que el usuario pulsa vlaores de 0 a 1/-1 en un framae
-        v = Input.GetAxisRaw("Vertical");// los valores van incrementando poco a poco 
+        v = Input.GetAxisRaw("Vertical");
 
 
-        //salto
+        /*salto
         quiereSaltar = Input.GetButton("Jump");  // GetButtonDown ---> registra true cuanado se pulsa el boton solo una vez cada que se pulsa
 
         //tocando suelo
@@ -101,7 +107,7 @@ public class MovePlayer : MonoBehaviour
                 radioDetectorsuelos,        //radio de detecion del suelo
                 capaSuelo);                 //solo regresa respuesta si la esfera toca algo       
 
-        /*if (Input.GetButtonUp("Jump")) // registra cuando el boton de salto dejo de ser pulsado
+        if (Input.GetButtonUp("Jump")) // registra cuando el boton de salto dejo de ser pulsado
         {
             tiempoSaltando = 0;
             if (numeroSalto < maxSaltos) //si el numero de saltos que dio el personaje es nemor a la cantidad de saltos maximos pertidos antes de tocar el suelo (evita que se agregen saltos extra a los permitidos)
@@ -126,8 +132,7 @@ public class MovePlayer : MonoBehaviour
 
         //detecta cuando se esta corriendo
 
-        if (Input.GetButtonDown("Sprint") && agachado == false && staminaActual > 0
-            )//solo se puede correr cuando no esta agachado 
+        if (Input.GetButtonDown("Sprint") && agachado == false && barraStamina.value > 0 && direccion.magnitude > 0.1f)//solo se puede correr cuando no esta agachado 
         {
             corriendo = true;
         }
@@ -135,10 +140,10 @@ public class MovePlayer : MonoBehaviour
         {
             corriendo = false;
         }
-        
+
 
         //dectecta cuando se hace el dash
-        if (Input.GetButtonDown("Dash") && dashDisponible && staminaActual > 0)//solo se detecta el dash si esta disponible y la estamina es mayor a 0
+        if (Input.GetButtonDown("Dash") && dashDisponible && barraStamina.value > 0 && direccion.magnitude > 0.1f)//solo se detecta el dash si esta disponible y la estamina es mayor a 0
         {
             StartCoroutine(Dash());
             staminaActual -= dashStamina;
@@ -150,7 +155,7 @@ public class MovePlayer : MonoBehaviour
             }
             regenerando = StartCoroutine(RegenararStamina());//instacia la corutina
 
-        }  
+        }
         if (barraStamina.value < 0) //rgeracion de barra de stamina cuando llega 0
         {
             if (regenerando != null)
@@ -159,7 +164,7 @@ public class MovePlayer : MonoBehaviour
             }
             regenerando = StartCoroutine(RegenararStamina());//instacia la corutina
         }
-        Debug.Log(staminaActual);
+        //Debug.Log(staminaActual);
     }
 
     private void FixedUpdate()//FISICAS
@@ -177,12 +182,12 @@ public class MovePlayer : MonoBehaviour
              v);  //eje z
 
         //Modificacion de la velocidad del jugador en basa a si esta corriendo, agachado o caminando
-        if (corriendo && direccion.magnitude > 0.1f && staminaActual > 0)//detecta cuabdo se presion el boton de strpint(left shift) y evita gastar stamina si no se esta en movimiento 
+        if (corriendo && staminaActual > 0)//detecta cuabdo se presion el boton de strpint(left shift)  
         {
             rb.MovePosition(rb.position + direccion.normalized * (velocidadMovimiento * (1 + velocidadSprint)) * Time.fixedDeltaTime);//movimento al correr
             staminaActual -= correrStamina * Time.deltaTime;// cada segundo se consume la estamina equivalente al costo de correr (en este caso es 25, por lo cual puede correr por 4s)
             barraStamina.value = staminaActual;
-            if (regenerando != null) 
+            if (regenerando != null)
             {
                 StopCoroutine(regenerando);
             }
@@ -192,7 +197,8 @@ public class MovePlayer : MonoBehaviour
         else if (agachado)//velocidad al agacharse
         {
             rb.MovePosition(rb.position + direccion.normalized * (velocidadMovimiento * (1 - velocidadAgachar)) * Time.fixedDeltaTime);//movimento al agacharse
-        } else
+        }
+        else
         {
             rb.MovePosition(rb.position + direccion.normalized * velocidadMovimiento * Time.fixedDeltaTime);//movimento al caminar
         }
@@ -221,27 +227,67 @@ public class MovePlayer : MonoBehaviour
         {
             rotacion = Quaternion.LookRotation(direccion);  //obtiene la rotacion ue tendra el presonaje en base a al vector generado en el movimiento
             rb.transform.rotation = Quaternion.Slerp(transform.rotation, rotacion, velocidadRotacion * Time.fixedDeltaTime); //suavica la animacion de rotacion del personaje 
+            Vector3 playerForwardVector = new Vector3(this.transform.forward.x, 0f, this.transform.forward.z);//guarda el vector de en eque direccion esta mirando el boxcollider deljugador 
+            Debug.DrawRay(this.transform.position, playerForwardVector * 5f, Color.magenta);
+            Debug.Log(rotacion);
         }
 
 
-        //salto
+        /*salto
         if (quiereSaltar)
         {
             if (tocandoSuelo || numeroSalto < maxSaltos)
             {
                 saltoCargado();
             }
+        }*/
+    }
+
+    private void LateUpdate()// se emplea lateupdate para asegurar que el codigo en update se haya ejecutado antes de actualizar la animacion  
+    {
+        if ((h == 0 && v == 0) && (spriteDirection.x != 0 || spriteDirection.y != 0))
+        {
+            LastspriteDirection = spriteDirection;
+        }
+        spriteDirection = new Vector2(h, v);//como los inputs se obtienen con getAxisRaw los valores van de -1 a 1 segun la direcion que tomen
+        SpriteAnimation();
+    }
+
+    private void SpriteAnimation()
+    {
+        animator.SetFloat("LastMoveX", LastspriteDirection.x);
+        animator.SetFloat("LastMoveY", LastspriteDirection.y);
+        animator.SetFloat("MoveMagnitude", spriteDirection.magnitude);
+        animator.SetFloat("MoveX", spriteDirection.x);
+        animator.SetFloat("MoveY", spriteDirection.y);
+
+        if (dash)
+        {
+            animator.SetBool("Dashing", true);
+        }
+        else
+        {
+            animator.SetBool("Dashing", false);
+        }
+
+        if (corriendo)
+        {
+            animator.SetBool("Running", true);
+        }
+        else
+        {
+            animator.SetBool("Running", false);
         }
     }
 
-    private void saltoCargado()
+    /*private void saltoCargado()
     {
         if (tiempoSaltando < tiempoInicioSalto)
         {
             rb.velocity = new Vector3(0, fuerzaSalto, 0);   //salto
             tiempoSaltando += Time.fixedDeltaTime;  //se le suma el timepo que se lleva desde que se inicio el salto
         }
-    }
+    }*/
 
     private IEnumerator Dash()
     {
@@ -260,8 +306,8 @@ public class MovePlayer : MonoBehaviour
 
     }
 
-    private IEnumerator RegenararStamina() 
-    { 
+    private IEnumerator RegenararStamina()
+    {
         yield return new WaitForSeconds(staminaCooldown);// se espera el timepo en staminacooldoown antes de empezar a regenerarla
 
         while (staminaActual < maxStamina)//relenar barra de stamina
@@ -272,4 +318,5 @@ public class MovePlayer : MonoBehaviour
         }
         regenerando = null;
     }
+
 }
