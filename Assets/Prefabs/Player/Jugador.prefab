@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3496443511134754862}
   - component: {fileID: 3671618129122066524}
-  - component: {fileID: 6866300269111686424}
+  - component: {fileID: 7455009111678974684}
   - component: {fileID: 4529697926805449124}
-  - component: {fileID: 5452453103006504877}
   m_Layer: 0
   m_Name: JugadorRender
   m_TagString: Untagged
@@ -29,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4298535659053179054}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6866300269111686424
+--- !u!114 &7455009111678974684
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,25 +120,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5452453103006504877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4298535659053179054}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44a521061601a0842a44cff630a726b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 5438631313706920892}
-  upAngle: 45
-  downAngle: -135
-  leftAngle: 135
-  rightAngle: -45
-  animator: {fileID: 4529697926805449124}
-  spriteRenderer: {fileID: 3671618129122066524}
 --- !u!1 &5438631313706920892
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,6 +132,11 @@ GameObject:
   - component: {fileID: 7538912546867630944}
   - component: {fileID: 8478298552728817244}
   - component: {fileID: 855652052104216010}
+  - component: {fileID: 1572568090867088605}
+  - component: {fileID: 5879344605059013254}
+  - component: {fileID: 3054616924312647085}
+  - component: {fileID: 8534382559035699482}
+  - component: {fileID: 7141823404215089951}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Player
@@ -173,6 +158,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3496443511134754862}
+  - {fileID: 5332095686735839551}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7538912546867630944
@@ -241,11 +227,134 @@ MonoBehaviour:
   correrStamina: 20
   velocidadAgachar: 0.3
   agacharYEscala: 0.5
-  dashFuerza: 15
-  dashDuracion: 0.5
+  dashFuerza: 10
+  dashDuracion: 1
   dashCooldown: 1
   dashStamina: 30
   barraStamina: {fileID: 0}
   staminaCooldown: 3
   animator: {fileID: 4529697926805449124}
   spriteRenderer: {fileID: 3671618129122066524}
+--- !u!114 &1572568090867088605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5438631313706920892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f1d3fda622052f498ffcfdfa46e1332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Corazones:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  VidaMaxima: 3
+  Escudos:
+  - {fileID: 0}
+  - {fileID: 0}
+  EscudoMaxima: 2
+  Escudo: 1
+--- !u!114 &5879344605059013254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5438631313706920892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd2ee92752e8f2a479fc50488587958c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventario:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  unidades:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &3054616924312647085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5438631313706920892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6cdc0adea90e4d41b750dedccaf69af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Botiquines: {fileID: 0}
+  BotiquinJugador: 2
+--- !u!114 &8534382559035699482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5438631313706920892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ffde7fd9976ec4d886b641c59e59d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Escudos: {fileID: 0}
+  EscudosJugador: 2
+--- !u!114 &7141823404215089951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5438631313706920892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d56aed83c792244395ca9ab61e44931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Granadas: {fileID: 0}
+  GranadasJugador: 2
+  GranadaPrefab: {fileID: 0}
+  PuntoLanzamiento: {fileID: 5332095686735839551}
+  FLanzamiento: 5
+  Explosion: 3
+--- !u!1 &8007846227840064527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5332095686735839551}
+  m_Layer: 6
+  m_Name: Lanzamiento
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5332095686735839551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8007846227840064527}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.883, y: 1.465, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2705983261214036429}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

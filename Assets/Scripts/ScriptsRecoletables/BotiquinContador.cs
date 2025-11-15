@@ -32,14 +32,14 @@ public class BotiquinContador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
+        /*if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
         {
             RecuperarVida();
 
-        }
+        }*/
     }
 
-    private void RecuperarVida()
+    public void RecuperarVida()
     {
         if (BotiquinJugador == 0)
         {

@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class InventarioJugador : MonoBehaviour
 {
@@ -11,10 +12,18 @@ public class InventarioJugador : MonoBehaviour
     public TextMeshProUGUI[] unidades;
     private int espacioInventario = 0;
 
+    //lista de items
+
+    private BotiquinContador botiquin;
+    private EscudoContador escudo;
+    private GranadaContador granada;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        botiquin = this.GetComponent<BotiquinContador>();
+        escudo = this.GetComponent<EscudoContador>();
+        granada= this.GetComponent<GranadaContador>();
     }
 
     // Update is called once per frame
@@ -31,6 +40,7 @@ public class InventarioJugador : MonoBehaviour
             {
                 espacioInventario = unidades.Length - 1;//lo desplaza al otro extremo del invetario
             }
+            Debug.Log("espacio en el inventario " + (espacioInventario + 1) + "/" + unidades.Length);
         }
 
         //desplazmiento a la derecha en el inventario
@@ -44,6 +54,7 @@ public class InventarioJugador : MonoBehaviour
             {
                 espacioInventario = 0;//lo desplaza al otro extremo del invetario
             }
+            Debug.Log("espacio en el inventario " + (espacioInventario + 1) + "/" + unidades.Length);
         }
 
         if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Joystick1Button0))//cuando se presione F o A/ equis
@@ -59,9 +70,11 @@ public class InventarioJugador : MonoBehaviour
         switch (itemId) 
         {
             case 0:
+                botiquin.RecuperarVida();
                 Debug.Log("espacio en el inventario "+ (itemId+1) + "/" + unidades.Length + " : se uso botiquin");
                 break;
             case 1:
+                escudo.RecuperarEscudo();
                 Debug.Log("espacio en el inventario " + (itemId + 1) + "/" + unidades.Length + " : se uso escudo");
                 break;
             case 2:
@@ -71,6 +84,7 @@ public class InventarioJugador : MonoBehaviour
                 Debug.Log("espacio en el inventario " + (itemId + 1) + "/" + unidades.Length + " : se uso granada electrica");
                 break;
             case 4:
+                granada.LanzaGranada();
                 Debug.Log("espacio en el inventario " + (itemId + 1) + "/" + unidades.Length + " : se uso granada de humo");
                 break;
         }

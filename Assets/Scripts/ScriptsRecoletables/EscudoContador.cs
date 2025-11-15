@@ -31,13 +31,13 @@ public class EscudoContador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
+        /*if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
         {
             RecuperarEscudo();
-        }
+        }*/
         
     }
-    private void RecuperarEscudo()
+    public void RecuperarEscudo()
     {
         if (EscudosJugador == 0)
         {

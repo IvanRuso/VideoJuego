@@ -24,13 +24,13 @@ public class GranadaContador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
+        /*if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
         {
             LanzaGranada();
-        }
+        }*/
     }
 
-    private void LanzaGranada()
+    public void LanzaGranada()
     {
         if (GranadasJugador == 0)
         {
