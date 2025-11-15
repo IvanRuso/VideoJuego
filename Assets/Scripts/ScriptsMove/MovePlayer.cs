@@ -34,7 +34,7 @@ public class MovePlayer : MonoBehaviour
     //dash
     private bool dashDisponible = true;
     private bool dash = false;
-    [SerializeField] private float dashFuerza = 5f;
+    [SerializeField] private float dashFuerza = 10f;
     [SerializeField] private float dashDuracion = 1f;
     [SerializeField] private float dashCooldown = 1f;
     private Vector3 dashDireccion;
@@ -132,11 +132,11 @@ public class MovePlayer : MonoBehaviour
 
         //detecta cuando se esta corriendo
 
-        if (Input.GetButtonDown("Sprint") && agachado == false && barraStamina.value > 0 && direccion.magnitude > 0.1f)//solo se puede correr cuando no esta agachado 
+        if (Input.GetButton("Sprint") && agachado == false && barraStamina.value > 0 && direccion.magnitude > 0.1f)//solo se puede correr cuando no esta agachado 
         {
             corriendo = true;
         }
-        if (Input.GetButtonUp("Sprint") && agachado == false)
+        if (Input.GetButton("Sprint") == false || agachado == true || barraStamina.value<=0)
         {
             corriendo = false;
         }
@@ -172,6 +172,7 @@ public class MovePlayer : MonoBehaviour
         //evita que el jugador haga alguna accion mientras se hace el dash
         if (dash)
         {
+            corriendo = false ;
             return;
         }
 
@@ -229,7 +230,7 @@ public class MovePlayer : MonoBehaviour
             rb.transform.rotation = Quaternion.Slerp(transform.rotation, rotacion, velocidadRotacion * Time.fixedDeltaTime); //suavica la animacion de rotacion del personaje 
             Vector3 playerForwardVector = new Vector3(this.transform.forward.x, 0f, this.transform.forward.z);//guarda el vector de en eque direccion esta mirando el boxcollider deljugador 
             Debug.DrawRay(this.transform.position, playerForwardVector * 5f, Color.magenta);
-            Debug.Log(rotacion);
+            //Debug.Log(rotacion);
         }
 
 

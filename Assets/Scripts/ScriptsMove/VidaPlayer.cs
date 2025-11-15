@@ -16,11 +16,11 @@ public class VidaPlayer : MonoBehaviour
     public int EscudoMaxima = 2;
     public int Escudo = 2;
 
-    private FullScreenController FullScreenController;
+    //private FullScreenController FullScreenController;
 
     void Start()
     {
-        GameObject playerObject = GameObject.FindGameObjectWithTag("ScreenEffect");
+       /* GameObject playerObject = GameObject.FindGameObjectWithTag("ScreenEffect");
         if (playerObject != null)
         {
             FullScreenController = playerObject.GetComponent<FullScreenController>();
@@ -28,7 +28,7 @@ public class VidaPlayer : MonoBehaviour
         else
         {
             Debug.LogError("No se encontro un objeto con la etiqueta 'Player' que tenga el script VidaJugador");
-        }
+        }*/
 
         VidaActual();
     }
@@ -39,12 +39,12 @@ public class VidaPlayer : MonoBehaviour
         if (Escudo >= 1)
         {
             Escudo -= Cantidad;
-            StartCoroutine(FullScreenController.Status(3));
+            //StartCoroutine(FullScreenController.Status(3));
         }
         else
         {
             Vida -= Cantidad;
-            StartCoroutine(FullScreenController.Status(3));
+            //StartCoroutine(FullScreenController.Status(3));
         }
 
         if (Vida < 0)
