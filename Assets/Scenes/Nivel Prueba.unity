@@ -1000,17 +1000,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
---- !u!114 &617422964 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2281154293763652880, guid: afc9bb2503c233e428e3bcd9d0b9872d, type: 3}
-  m_PrefabInstance: {fileID: 3944661326425443439}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &633215820 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3742415432685357191, guid: afc9bb2503c233e428e3bcd9d0b9872d, type: 3}
@@ -1183,13 +1172,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadMovimiento: 5
-  velocidadRotacion: 8
+  velocidadRotacion: 5
   velocidadSprint: 0.5
   correrStamina: 20
   velocidadAgachar: 0.3
   agacharYEscala: 0.5
-  dashFuerza: 15
-  dashDuracion: 0.5
+  dashFuerza: 10
+  dashDuracion: 1
   dashCooldown: 1
   dashStamina: 30
   barraStamina: {fileID: 2034843075}
@@ -1798,11 +1787,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7439078105009645903, guid: 6832274eba6e02e478dc7e137d9100ad, type: 3}
   m_PrefabInstance: {fileID: 835143341}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &848562732 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100002, guid: f7efb0d9df2264096af57128df85dddb, type: 3}
-  m_PrefabInstance: {fileID: 1541018764}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &866857138
 PrefabInstance:
@@ -2574,135 +2558,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1289915487
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 855652052104216010, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: barraStamina
-      value: 
-      objectReference: {fileID: 2034843075}
-    - target: {fileID: 1572568090867088605, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: Escudos.Array.data[0]
-      value: 
-      objectReference: {fileID: 633215820}
-    - target: {fileID: 1572568090867088605, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: Escudos.Array.data[1]
-      value: 
-      objectReference: {fileID: 1952462359}
-    - target: {fileID: 1572568090867088605, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: Corazones.Array.data[0]
-      value: 
-      objectReference: {fileID: 1912953259}
-    - target: {fileID: 1572568090867088605, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: Corazones.Array.data[1]
-      value: 
-      objectReference: {fileID: 127928280}
-    - target: {fileID: 1572568090867088605, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: Corazones.Array.data[2]
-      value: 
-      objectReference: {fileID: 953089536}
-    - target: {fileID: 2705983261214036429, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2705983261214036429, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2705983261214036429, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2705983261214036429, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2705983261214036429, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2705983261214036429, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2705983261214036429, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2705983261214036429, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2705983261214036429, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2705983261214036429, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3054616924312647085, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: Botiquines
-      value: 
-      objectReference: {fileID: 259756584}
-    - target: {fileID: 5438631313706920892, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: m_Name
-      value: Jugador (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5438631313706920892, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5879344605059013254, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: inventario.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5879344605059013254, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: unidades.Array.data[0]
-      value: 
-      objectReference: {fileID: 259756584}
-    - target: {fileID: 5879344605059013254, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: unidades.Array.data[1]
-      value: 
-      objectReference: {fileID: 20937740}
-    - target: {fileID: 5879344605059013254, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: unidades.Array.data[2]
-      value: 
-      objectReference: {fileID: 812799041}
-    - target: {fileID: 5879344605059013254, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: unidades.Array.data[3]
-      value: 
-      objectReference: {fileID: 812799041}
-    - target: {fileID: 5879344605059013254, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: unidades.Array.data[4]
-      value: 
-      objectReference: {fileID: 131372742}
-    - target: {fileID: 5879344605059013254, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: inventario.Array.data[0]
-      value: 
-      objectReference: {fileID: 617422964}
-    - target: {fileID: 7141823404215089951, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: Granadas
-      value: 
-      objectReference: {fileID: 131372742}
-    - target: {fileID: 7141823404215089951, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: GranadaPrefab
-      value: 
-      objectReference: {fileID: 848562732}
-    - target: {fileID: 8534382559035699482, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
-      propertyPath: Escudos
-      value: 
-      objectReference: {fileID: 20937740}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4cff0221f93e263439064e5a9db1e0e3, type: 3}
 --- !u!1001 &1331197120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4921,7 +4776,6 @@ SceneRoots:
   - {fileID: 705826414}
   - {fileID: 1271818821}
   - {fileID: 669140559}
-  - {fileID: 1289915487}
   - {fileID: 186490617}
   - {fileID: 3944661326425443439}
   - {fileID: 1795632545}
