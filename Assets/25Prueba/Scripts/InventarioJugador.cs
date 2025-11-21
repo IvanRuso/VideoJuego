@@ -17,6 +17,7 @@ public class InventarioJugador : MonoBehaviour
     private BotiquinContador botiquin;
     private EscudoContador escudo;
     private GranadaContador granada;
+    private TAccesoContador tAcceso;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class InventarioJugador : MonoBehaviour
         botiquin = this.GetComponent<BotiquinContador>();
         escudo = this.GetComponent<EscudoContador>();
         granada= this.GetComponent<GranadaContador>();
+        tAcceso = this.GetComponent<TAccesoContador>();
     }
 
     // Update is called once per frame
@@ -78,6 +80,7 @@ public class InventarioJugador : MonoBehaviour
                 Debug.Log("espacio en el inventario " + (itemId + 1) + "/" + unidades.Length + " : se uso escudo");
                 break;
             case 2:
+                tAcceso.ActivaPuerta();
                 Debug.Log("espacio en el inventario " + (itemId + 1) + "/" + unidades.Length + " : se uso tarjeta de acceso");
                 break;
             case 3:
