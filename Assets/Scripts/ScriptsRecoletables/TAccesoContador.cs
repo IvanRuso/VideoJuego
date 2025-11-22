@@ -34,20 +34,25 @@ public class TAccesoContador : MonoBehaviour
         {
             if (!puertaAbierta)
             {
-            /*    Debug.Log("Cerrar");
-                puerta.AbrirPuerta(false);
-                puertaAbierta = false;
-            }
-            else
-            {*/
+                /*    Debug.Log("Cerrar");
+                    puerta.AbrirPuerta(false);
+                    puertaAbierta = false;
+                }
+                else
+                {*/
                 Debug.Log("Abrir");
                 puerta.AbrirPuerta(true);
                 puertaAbierta = true;
             }
-
+            TAccesoJugador--;
+            Debug.Log("LLave Usada");
         }
-        TAccesoJugador--;
-        ActualizarPantalla();
+        else 
+        { 
+            Debug.Log("No se puede usar la llave aqui"); 
+        }
+
+            ActualizarPantalla();
     }
 
     public void Actualiza(int Agrega)

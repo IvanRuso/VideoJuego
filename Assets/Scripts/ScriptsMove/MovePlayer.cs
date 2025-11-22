@@ -19,11 +19,11 @@ public class MovePlayer : MonoBehaviour
     private bool corriendo = false;
     [SerializeField] private float correrStamina = 20; //establece cuanta stamina conume correr
 
-    //agacharse
+    /*agacharse
     [SerializeField] private float velocidadAgachar = 0.3f;    //Se refiere a cuanto sera la disminucion de velocidad al agacharse (en %) 
     [SerializeField] private float agacharYEscala = 0.5f;
     private float originalYEscala;
-    private bool agachado = false;
+    private bool agachado = false;*/
 
     /*public Vector3 escalaFinal; // La escala a la que queremos llegar
     public float duracion = 0.5f; // El tiempo que tardará en alcanzar la escala final
@@ -76,7 +76,7 @@ public class MovePlayer : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();   //Busca el componente en el mismo nivel/inspector del obejor en el que se encuentra
-        originalYEscala = transform.localScale.y;  //Guarda la escala en Y del jugador original
+        //originalYEscala = transform.localScale.y;  //Guarda la escala en Y del jugador original
 
         //inicializando barra de stamina
         staminaActual = maxStamina;
@@ -120,7 +120,7 @@ public class MovePlayer : MonoBehaviour
             numeroSalto = 0;
         }*/
 
-        //detecta cuando se esta agachado
+        /*detecta cuando se esta agachado
         if (Input.GetButtonDown("Crouch"))
         {
             agachado = true;
@@ -128,15 +128,15 @@ public class MovePlayer : MonoBehaviour
         if (Input.GetButtonUp("Crouch"))
         {
             agachado = false;
-        }
+        }*/
 
         //detecta cuando se esta corriendo
 
-        if (Input.GetButton("Sprint") && agachado == false && barraStamina.value > 0 && direccion.magnitude > 0.1f)//solo se puede correr cuando no esta agachado 
+        if (Input.GetButton("Sprint") && /*agachado == false &&*/ barraStamina.value > 0 && direccion.magnitude > 0.1f)//solo se puede correr cuando no esta agachado 
         {
             corriendo = true;
         }
-        if (Input.GetButton("Sprint") == false || agachado == true || barraStamina.value<=0)
+        if (Input.GetButton("Sprint") == false /*|| agachado == true*/ || barraStamina.value<=0)
         {
             corriendo = false;
         }
@@ -195,16 +195,16 @@ public class MovePlayer : MonoBehaviour
             regenerando = StartCoroutine(RegenararStamina());//instacia la corutina
 
         }
-        else if (agachado)//velocidad al agacharse
+        /*else if (agachado)//velocidad al agacharse
         {
             rb.MovePosition(rb.position + direccion.normalized * (velocidadMovimiento * (1 - velocidadAgachar)) * Time.fixedDeltaTime);//movimento al agacharse
-        }
+        }*/
         else
         {
             rb.MovePosition(rb.position + direccion.normalized * velocidadMovimiento * Time.fixedDeltaTime);//movimento al caminar
         }
 
-        //Modifica el tamaño del jugador al agacharse
+        /*odifica el tamaño del jugador al agacharse
         if (!agachado)//si no esta agachado la escala en y es la original
         {
             /*escalaInicial = new Vector3(transform.localScale.x, agacharYEscala, transform.localScale.z);
@@ -215,13 +215,13 @@ public class MovePlayer : MonoBehaviour
             progreso = Mathf.Clamp01(tiempoTranscurrido / duracion);
 
             // Interpola la escala actual entre la escala inicial y la final
-            transform.localScale = Vector3.Lerp(escalaInicial, escalaFinal, progreso);*/
+            transform.localScale = Vector3.Lerp(escalaInicial, escalaFinal, progreso);
             transform.localScale = new Vector3(transform.localScale.x, originalYEscala, transform.localScale.z);
         }
         else if (agachado)//si esta agachado la escala en y es la escala agachada
         {
             transform.localScale = new Vector3(transform.localScale.x, agacharYEscala, transform.localScale.z);
-        }
+        }*/
 
         //Rotacion del jugador en la direccion que se mueve
         if (direccion.magnitude > 0.1f) //si la magnitud del vector de direccion es mayor que 0.1f el personaje rotara es esa direccion, manteniedo la rotacion
