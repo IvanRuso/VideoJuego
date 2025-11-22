@@ -93,7 +93,7 @@ public class GranadaContador : MonoBehaviour
     {
         if (Granadas != null)
         {
-            Granadas.text = "X " + GranadasJugador.ToString();
+            Granadas.text = "X" + GranadasJugador.ToString();
         }
         else
         {

@@ -31,13 +31,13 @@ public class VendasContador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
+        /*if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
         {
             RecuperarVida();
-        }
+        }*/
     }
 
-    private void RecuperarVida()
+    public void RecuperarVida()
     {
         if (VendasJugador == 0)
         {

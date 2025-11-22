@@ -65,7 +65,7 @@ public class EscudoContador : MonoBehaviour
     {
         if (Escudos != null)
         {
-            Escudos.text = "X " + EscudosJugador.ToString();
+            Escudos.text = "X" + EscudosJugador.ToString();
         }
         else
         {

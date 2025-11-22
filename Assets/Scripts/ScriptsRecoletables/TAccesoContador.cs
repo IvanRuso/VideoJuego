@@ -65,7 +65,7 @@ public class TAccesoContador : MonoBehaviour
     {
         if (TAcceso != null)
         {
-            TAcceso.text = "X " + TAccesoJugador.ToString();
+            TAcceso.text = "X" + TAccesoJugador.ToString();
         }
         else
         {

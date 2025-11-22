@@ -41,9 +41,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _OutlineThickness: 5
+    - _OutlineThickness: 7.5
     m_Colors:
-    - _OutlineColor: {r: 1.9521693, g: 0.18368521, b: 0.16637802, a: 0.8}
+    - _OutlineColor: {r: 1.4506761, g: 0.008337218, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6111489664164378098
 MonoBehaviour:

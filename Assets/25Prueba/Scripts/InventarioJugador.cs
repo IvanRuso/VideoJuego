@@ -17,7 +17,7 @@ public class InventarioJugador : MonoBehaviour
 
     //lista de items
 
-    private BotiquinContador botiquin;
+    private VendasContador botiquin;
     private EscudoContador escudo;
     private GranadaContador granada;
     private TAccesoContador tAcceso;
@@ -27,7 +27,7 @@ public class InventarioJugador : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        botiquin = this.GetComponent<BotiquinContador>();
+        botiquin = this.GetComponent<VendasContador>();
         escudo = this.GetComponent<EscudoContador>();
         granada= this.GetComponent<GranadaContador>();
         tAcceso = this.GetComponent<TAccesoContador>();
@@ -124,7 +124,7 @@ public class InventarioJugador : MonoBehaviour
     private void disponibleItem()//se encarga de oscurecer icono del item en el invtario cuando este sea 0 (el contorno aun es visible)
     {
         //botiquin
-        if (botiquin.BotiquinJugador != 0)
+        if (botiquin.VendasJugador != 0)
         {
             inventario[0].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         }
