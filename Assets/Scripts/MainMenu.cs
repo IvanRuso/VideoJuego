@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     public int sfxToPlay;
 
     public GameObject optionsPanel;
+    public GameObject darkLayer;
     public GameObject creditsPanel;
 
     public void NewGame()
@@ -49,28 +50,32 @@ public class MainMenu : MonoBehaviour
     public void OpenOptions()
     {
         optionsPanel.SetActive(true);
+        darkLayer.SetActive(true);
         sfxToPlay = 6;
-        //AudioManager.instance.SoundEffects(sfxToPlay);
+        AudioManager.instance.SoundEffects(sfxToPlay);
     }
 
     public void OpenCredits()
     {
         creditsPanel.SetActive(true);
+        darkLayer.SetActive(true);
         sfxToPlay = 6;
-        //AudioManager.instance.SoundEffects(sfxToPlay);
+        AudioManager.instance.SoundEffects(sfxToPlay);
     }
     public void CloseOptions()
     {
         optionsPanel.SetActive(false);
+        darkLayer.SetActive(false);
         sfxToPlay = 1;
-        //AudioManager.instance.SoundEffects(sfxToPlay);
+        AudioManager.instance.SoundEffects(sfxToPlay);
     }
 
     public void CloseCredits()
     {
         creditsPanel.SetActive(false);
+        darkLayer.SetActive(false);
         sfxToPlay = 1;
-        //AudioManager.instance.SoundEffects(sfxToPlay);
+        AudioManager.instance.SoundEffects(sfxToPlay);
     }
     public void QuitGame()
     {
