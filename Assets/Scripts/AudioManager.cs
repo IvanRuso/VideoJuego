@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
 
-        //PlayMusic(bgmMusic);
+        PlayMusic(bgmMusic);
         SetMasterLevel();
         SetMusicLevel();
         SetSFXLevel();

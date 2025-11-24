@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         //posicionRespawn = PlayerMovement.instance.transform.position;
         UIManager.instance.pauseScreen.SetActive(false);
-        AddCoins(0);
+        //AddCoins(0);
     }
 
     
@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour
     {
         if (UIManager.instance.pauseScreen.activeInHierarchy)
         {
+            
             UIManager.instance.pauseScreen.SetActive(false);
             Time.timeScale = 1f;
 
@@ -93,7 +94,7 @@ public class GameManager : MonoBehaviour
         else
         {
             UIManager.instance.pauseScreen.SetActive(true);
-            UIManager.instance.CloseOptions();
+            //UIManager.instance.CloseOptions();
             Time.timeScale = 0f;
 
             Cursor.visible = true;

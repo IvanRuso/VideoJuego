@@ -40,7 +40,7 @@ Material:
     - _VignetteIntesity: 1
     - _VignettePower: 3.75
     - _VoronolDensity: 26.3
-    - _VoronolIntensity: 2.251692
+    - _VoronolIntensity: 0
     - _VoronolPower: 2
     - _VoronolSpeed: 1.5
     m_Colors:

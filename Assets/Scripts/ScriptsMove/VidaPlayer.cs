@@ -15,6 +15,7 @@ public class VidaPlayer : MonoBehaviour
     public Image[] Escudos;
     public int EscudoMaxima = 2;
     public int Escudo = 2;
+    private int sfxToPlay;
 
     //private FullScreenController FullScreenController;
 
@@ -39,14 +40,17 @@ public class VidaPlayer : MonoBehaviour
         if (Escudo >= 1)
         {
             Escudo -= Cantidad;
+            sfxToPlay = 13;
+            
             //StartCoroutine(FullScreenController.Status(3));
         }
         else
         {
             Vida -= Cantidad;
+            sfxToPlay = 21;
             //StartCoroutine(FullScreenController.Status(3));
         }
-
+        AudioManager.instance.SoundEffects(sfxToPlay);
         if (Vida < 0)
         {
             Vida = 0;

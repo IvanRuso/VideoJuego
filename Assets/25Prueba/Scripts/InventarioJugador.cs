@@ -13,7 +13,8 @@ public class InventarioJugador : MonoBehaviour
     public Material[] contorno;
     private int espacioInventario = 0;
     private int espacioAnterior = 1;
-
+    private int sfxToPlay;
+            
 
     //lista de items
 
@@ -60,14 +61,18 @@ public class InventarioJugador : MonoBehaviour
         {
             if (espacioInventario > 0)
             {
+                
                 espacioAnterior = espacioInventario;
                 espacioInventario--;//se movera al espacio a la izquierda en el inventario siempre y cuabdo este en una posion mayor a 0()extremo izquerdo del inventario
+                
             }
             else
             {
                 espacioAnterior = espacioInventario;
                 espacioInventario = unidades.Length - 1;//lo desplaza al otro extremo del invetario
             }
+            sfxToPlay = 22;
+            AudioManager.instance.SoundEffects(sfxToPlay);
 
             //Debug.Log("espacio en el inventario " + (espacioInventario + 1) + "/" + unidades.Length);
         }
@@ -86,6 +91,8 @@ public class InventarioJugador : MonoBehaviour
                 espacioInventario = 0;//lo desplaza al otro extremo del invetario
             }
             //Debug.Log("espacio en el inventario " + (espacioInventario + 1) + "/" + unidades.Length);
+            sfxToPlay = 22;
+            AudioManager.instance.SoundEffects(sfxToPlay);
         }
         seleccionItem(espacioInventario, espacioAnterior);
 
@@ -101,14 +108,20 @@ public class InventarioJugador : MonoBehaviour
         {
             case 0:
                 botiquin.RecuperarVida();
+                sfxToPlay = 15;
+                AudioManager.instance.SoundEffects(sfxToPlay);
                 //Debug.Log("espacio en el inventario "+ (itemId+1) + "/" + unidades.Length + " : se uso botiquin");
                 break;
             case 1:
                 escudo.RecuperarEscudo();
+                sfxToPlay = 16;
+                AudioManager.instance.SoundEffects(sfxToPlay);
                 //Debug.Log("espacio en el inventario " + (itemId + 1) + "/" + unidades.Length + " : se uso escudo");
                 break;
             case 2:
                 tAcceso.ActivaPuerta();
+                sfxToPlay = 23;
+                AudioManager.instance.SoundEffects(sfxToPlay);
                 //Debug.Log("espacio en el inventario " + (itemId + 1) + "/" + unidades.Length + " : se uso tarjeta de acceso");
                 break;
             case 3:
@@ -116,6 +129,8 @@ public class InventarioJugador : MonoBehaviour
                 break;
             case 4:
                 granada.LanzaGranada();
+                sfxToPlay = 17;
+                AudioManager.instance.SoundEffects(sfxToPlay);
                 //Debug.Log("espacio en el inventario " + (itemId + 1) + "/" + unidades.Length + " : se uso granada de humo");
                 break;
         }

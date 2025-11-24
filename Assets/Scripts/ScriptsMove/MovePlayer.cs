@@ -71,6 +71,8 @@ public class MovePlayer : MonoBehaviour
     private Vector2 LastspriteDirection;
     [SerializeField] Animator animator;
     [SerializeField] SpriteRenderer spriteRenderer;
+    private int sfxToPlay;
+    private bool pasoIz;
 
     // Start is called before the first frame update
     void Start()
@@ -202,6 +204,7 @@ public class MovePlayer : MonoBehaviour
         else
         {
             rb.MovePosition(rb.position + direccion.normalized * velocidadMovimiento * Time.fixedDeltaTime);//movimento al caminar
+            
         }
 
         /*odifica el tamaño del jugador al agacharse
@@ -232,7 +235,7 @@ public class MovePlayer : MonoBehaviour
             Debug.DrawRay(this.transform.position, playerForwardVector * 5f, Color.magenta);
             //Debug.Log(rotacion);
         }
-
+        
 
         /*salto
         if (quiereSaltar)

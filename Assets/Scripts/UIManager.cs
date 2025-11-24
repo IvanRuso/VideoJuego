@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
     public GameObject pauseScreen;
     public GameObject OptionsPanel;
     public string mainMenu;
-    //public string levelSelect;
+    public string levelSelect;
 
     public Slider masterVolumeSlider, musicVolumeSlider, sfxVolumeSlider;
 
@@ -61,35 +61,35 @@ public class UIManager : MonoBehaviour
     {
         GameManager.instance.PauseUnpause();
         sfxToPlay = 8;
-        //AudioManager.instance.SoundEffects(sfxToPlay);
+        AudioManager.instance.SoundEffects(sfxToPlay);
     }
-
+    /*
     public void OpenOptions()
     {
         OptionsPanel.SetActive(true);
         sfxToPlay = 6;
-        //AudioManager.instance.SoundEffects(sfxToPlay);
+        AudioManager.instance.SoundEffects(sfxToPlay);
     }
 
     public void CloseOptions()
     {
         OptionsPanel.SetActive(false);
         sfxToPlay = 1;
-        //AudioManager.instance.SoundEffects(sfxToPlay);
-    }
+        AudioManager.instance.SoundEffects(sfxToPlay);
+    }*/
 
-    /*public void LevelSelect()
+    public void LevelSelect()
     {
         sfxToPlay = 8;
-        //AudioManager.instance.SoundEffects(sfxToPlay);
+        AudioManager.instance.SoundEffects(sfxToPlay);
         SceneManager.LoadScene(levelSelect);
         Time.timeScale = 1f;
-    }*/
+    }
 
     public void MainMenu()
     {
         sfxToPlay = 8;
-        //AudioManager.instance.SoundEffects(sfxToPlay);
+        AudioManager.instance.SoundEffects(sfxToPlay);
         SceneManager.LoadScene(mainMenu);
         Time.timeScale = 1f;
     }
