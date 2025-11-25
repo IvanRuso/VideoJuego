@@ -22,8 +22,7 @@ public class InventarioJugador : MonoBehaviour
     private EscudoContador escudo;
     private GranadaContador granada;
     private TAccesoContador tAcceso;
-    //lista de items
-
+    
 
     // Start is called before the first frame update
     void Start()

@@ -61,7 +61,8 @@ public class MovePlayer : MonoBehaviour
     //barra de stamina
     private float maxStamina = 100;
     private float staminaActual;
-    public Slider barraStamina;
+    //public Slider barraStamina;
+    public Image StaminaBar;
     public float staminaCooldown = 3f;
     private WaitForSeconds regenarVelocidad = new WaitForSeconds(0.05f);//determina la velocidad del llenado de la barra
     private Coroutine regenerando;
@@ -82,13 +83,14 @@ public class MovePlayer : MonoBehaviour
 
         //inicializando barra de stamina
         staminaActual = maxStamina;
-        barraStamina.maxValue = maxStamina;
-        barraStamina.value = staminaActual;
+        //barraStamina.maxValue = maxStamina;
+        //barraStamina.value = staminaActual;
     }
 
     // Update is called once per frame
     void Update() //LOGICA
     {
+        
         //evita que el jugador haga alguna accion mientras se hace el dash
         if (dash)
         {
@@ -134,23 +136,24 @@ public class MovePlayer : MonoBehaviour
 
         //detecta cuando se esta corriendo
 
-        if (Input.GetButton("Sprint") && /*agachado == false &&*/ barraStamina.value > 0 && direccion.magnitude > 0.1f)//solo se puede correr cuando no esta agachado 
+        if (Input.GetButton("Sprint") && /*agachado == false &&*/ staminaActual > 0 && direccion.magnitude > 0.1f)//solo se puede correr cuando no esta agachado 
         {
             corriendo = true;
         }
-        if (Input.GetButton("Sprint") == false /*|| agachado == true*/ || barraStamina.value<=0)
+        if (Input.GetButton("Sprint") == false /*|| agachado == true*/ || staminaActual <= 0)
         {
             corriendo = false;
         }
 
 
         //dectecta cuando se hace el dash
-        if (Input.GetButtonDown("Dash") && dashDisponible && barraStamina.value > 0 && direccion.magnitude > 0.1f)//solo se detecta el dash si esta disponible y la estamina es mayor a 0
+        if (Input.GetButtonDown("Dash") && dashDisponible && staminaActual > 0 && direccion.magnitude > 0.1f)//solo se detecta el dash si esta disponible y la estamina es mayor a 0
         {
             StartCoroutine(Dash());
             staminaActual -= dashStamina;
+            StaminaBar.fillAmount = staminaActual / maxStamina;
 
-            barraStamina.value = staminaActual;  // la estamina se consume el equivalente al costo de dashear 
+            //barraStamina.value = staminaActual;  // la estamina se consume el equivalente al costo de dashear 
             if (regenerando != null)
             {
                 StopCoroutine(regenerando);
@@ -158,14 +161,16 @@ public class MovePlayer : MonoBehaviour
             regenerando = StartCoroutine(RegenararStamina());//instacia la corutina
 
         }
-        if (barraStamina.value < 0) //rgeracion de barra de stamina cuando llega 0
+        /*
+        if (staminaActual < 0 ) //rgeracion de barra de stamina cuando llega 0
         {
-            if (regenerando != null)
+            Debug.Log("estamina vacia");
+            if (staminaActual < 0 && regenerando != null)
             {
                 StopCoroutine(regenerando);
             }
             regenerando = StartCoroutine(RegenararStamina());//instacia la corutina
-        }
+        }*/
         //Debug.Log(staminaActual);
     }
 
@@ -189,7 +194,8 @@ public class MovePlayer : MonoBehaviour
         {
             rb.MovePosition(rb.position + direccion.normalized * (velocidadMovimiento * (1 + velocidadSprint)) * Time.fixedDeltaTime);//movimento al correr
             staminaActual -= correrStamina * Time.deltaTime;// cada segundo se consume la estamina equivalente al costo de correr (en este caso es 25, por lo cual puede correr por 4s)
-            barraStamina.value = staminaActual;
+            //barraStamina.value = staminaActual;
+            StaminaBar.fillAmount = staminaActual / maxStamina;
             if (regenerando != null)
             {
                 StopCoroutine(regenerando);
@@ -306,21 +312,24 @@ public class MovePlayer : MonoBehaviour
         yield return new WaitForSeconds(dashCooldown);
 
         dashDisponible = true;
-        Debug.Log("dash disponible estamina actual" + barraStamina.value); ;
+        //Debug.Log("dash disponible estamina actual" + barraStamina.value); ;
 
     }
 
     private IEnumerator RegenararStamina()
     {
+        //Debug.Log("esperantoa llenar lastamina");
         yield return new WaitForSeconds(staminaCooldown);// se espera el timepo en staminacooldoown antes de empezar a regenerarla
 
-        while (staminaActual < maxStamina)//relenar barra de stamina
-        {
+        
+        do {
+            //Debug.Log("llenando");
             staminaActual += maxStamina / 100;
-            barraStamina.value = staminaActual;
+            StaminaBar.fillAmount = staminaActual / maxStamina;
+            //barraStamina.value = staminaActual;
             yield return regenarVelocidad;
-        }
-        regenerando = null;
+        } while (staminaActual < maxStamina) ;//relenar barra de stamina
+            regenerando = null;
     }
 
 }

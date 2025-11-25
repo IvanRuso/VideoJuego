@@ -6,15 +6,17 @@ using UnityEngine.UI;
 
 public class VidaPlayer : MonoBehaviour
 {
+    public Image[] puntosVida;
+
     //Puntos de vida
-    public Image[] Corazones;
+    //public Image[] Corazones;
     public int VidaMaxima = 3;
-    private int Vida = 3;
+    public int Vida = 3;
 
     //Puntos de escudo
-    public Image[] Escudos;
+    //public Image[] Escudos;
     public int EscudoMaxima = 2;
-    public int Escudo = 2;
+    public int Escudo = 1;
     private int sfxToPlay;
 
     //private FullScreenController FullScreenController;
@@ -107,30 +109,36 @@ public class VidaPlayer : MonoBehaviour
 
     private void VidaActual()
     {
-        //puntos de vida
-        for (int i = 0; i < VidaMaxima; i++) 
+        int puntosVidaID = 0;
+        bool llenandoPV = true;
+        do
         {
-            if (i < Vida)
+            if (llenandoPV)
             {
-                Corazones[i].enabled = true;
+                //puntos de salud
+                for (int i = 0; i < Vida; i++)
+                {
+                    puntosVida[puntosVidaID].enabled = true;
+                    puntosVida[puntosVidaID].color = Color.green;
+                    puntosVidaID++;
+                }
+                //puntos de escudo
+                for (int i = 0; i < Escudo; i++)
+                {
+                    puntosVida[puntosVidaID].enabled = true;
+                    puntosVida[puntosVidaID].color = Color.blue;
+                    puntosVidaID++;
+                }
+               llenandoPV = false;
             }
-            else
+            
+            if(puntosVidaID < puntosVida.Length)
             {
-                Corazones[i].enabled = false;
+                puntosVida[puntosVidaID].enabled = false;
+                puntosVidaID++;
             }
-        }
-        //puntos de escudo
-        for (int i = 0; i < EscudoMaxima; i++)
-        {
-            if (i < Escudo)
-            {
-                Escudos[i].enabled = true;
-            }
-            else
-            {
-                Escudos[i].enabled = false;
-            }
-        }
+            
+        } while (puntosVidaID < puntosVida.Length);
     }
 
     public bool RecuperarVida(int amount)
@@ -179,7 +187,7 @@ public class VidaPlayer : MonoBehaviour
 
         VidaActual();
 
-        Debug.Log("Escudo Regenerado. Escudo actual: " + Vida);
+        Debug.Log("Escudo Regenerado. Escudo actual: " + Escudo);
         return true;
     }
     /*private void OnParticleCollision(GameObject other)

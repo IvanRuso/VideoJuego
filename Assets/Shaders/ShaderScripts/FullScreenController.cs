@@ -7,8 +7,8 @@ using UnityEngine.Rendering.Universal;
 public class FullScreenController : MonoBehaviour
 {
     [Header("Stats de Tiempo")]
-    [SerializeField] private float healDisplayTime = 1.5f;
-    [SerializeField] private float healFadeOutTime = 0.5f;
+    [SerializeField] private float healDisplayTime = 1.0f;
+    [SerializeField] private float healFadeOutTime = 0.3f;
 
     [Header("Referencias")]
     //[SerializeField] private UniversalRendererData rendererData;
