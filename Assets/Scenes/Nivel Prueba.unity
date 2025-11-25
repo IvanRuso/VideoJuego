@@ -1038,7 +1038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3a75e118fc94240981843a24a54207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 669140559}
+  target: {fileID: 1693598590}
 --- !u!1 &192392451
 GameObject:
   m_ObjectHideFlags: 0
@@ -3091,6 +3091,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 942905726355034372, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 942905726355034372, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5bb30495ecd399c4eb192bbc5020eee4, type: 2}
+    - target: {fileID: 979480402292339910, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 979480402292339910, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0fe020e745aece64596f57cd8f0b41a9, type: 2}
+    - target: {fileID: 1079101831258422957, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2827629457886816107, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
       propertyPath: m_LocalScale.x
       value: 20
@@ -3142,6 +3162,10 @@ PrefabInstance:
     - target: {fileID: 5959257161621290155, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
       propertyPath: m_Name
       value: Muro (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507877551635100133, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9524,6 +9548,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 867218541980992057, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 942905726355034372, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0fe020e745aece64596f57cd8f0b41a9, type: 2}
     - target: {fileID: 2827629457886816107, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
       propertyPath: m_LocalScale.x
       value: 10
@@ -9572,9 +9604,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4600983277518346440, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5959257161621290155, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
       propertyPath: m_Name
       value: Muro (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308093106570753474, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
+      propertyPath: m_Size.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308093106570753474, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
+      propertyPath: m_Center.z
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337863807627515621, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
+      propertyPath: CutoutSizeEnd
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9792,14 +9840,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2827629457886816107, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 2827629457886816107, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2827629457886816107, guid: ecfd2e870e5dc7741bc8af5dd4d5e315, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6
