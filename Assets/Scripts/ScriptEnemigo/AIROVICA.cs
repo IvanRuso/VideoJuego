@@ -79,9 +79,10 @@ public class AIROVICA : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            /*
             if (puntoRespawn != null)
                 collision.gameObject.transform.position = puntoRespawn.position;
-
+            */
             VidaPlayer vidaJugador = collision.gameObject.GetComponent<VidaPlayer>();
             if (vidaJugador != null)
                 vidaJugador.Daño(1);

@@ -8,8 +8,6 @@ public class ROVICA_CV : MonoBehaviour
     void Start()
     {
         ai = GetComponentInParent<AIROVICA>();
-        if (ai == null)
-            Debug.LogError("No se encontró AIROVICA en el padre.");
     }
 
     private void OnTriggerEnter(Collider other)
