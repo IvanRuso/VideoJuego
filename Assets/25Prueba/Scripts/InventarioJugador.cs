@@ -119,8 +119,6 @@ public class InventarioJugador : MonoBehaviour
                 break;
             case 2:
                 tAcceso.ActivaPuerta();
-                sfxToPlay = 23;
-                AudioManager.instance.SoundEffects(sfxToPlay);
                 //Debug.Log("espacio en el inventario " + (itemId + 1) + "/" + unidades.Length + " : se uso tarjeta de acceso");
                 break;
             case 3:
@@ -156,7 +154,7 @@ public class InventarioJugador : MonoBehaviour
             inventario[1].color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
         }
         //tarjeta acceso
-        if (tAcceso.TAccesoJugador != 0)
+        if (tAcceso.tAccesoJugador != 0)
         {
             inventario[2].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         }

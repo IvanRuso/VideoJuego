@@ -5,6 +5,7 @@ using UnityEngine;
 public class ActivarPuerta : MonoBehaviour
 {
     private bool jugadorEnArea = false;
+    [SerializeField] private MoverPuerta puerta;
 
     void OnTriggerEnter(Collider other)
     {
@@ -27,5 +28,9 @@ public class ActivarPuerta : MonoBehaviour
         {
             return false;
         }
+    }
+    public MoverPuerta PuertaAMover()
+    {
+        return puerta;
     }
 }

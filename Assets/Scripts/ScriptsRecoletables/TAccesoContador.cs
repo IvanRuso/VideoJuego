@@ -6,58 +6,72 @@ using TMPro;
 public class TAccesoContador : MonoBehaviour
 {
     public TextMeshProUGUI TAcceso;
-    public MoverPuerta puerta;
-    public ActivarPuerta activarPuerta;
-    public int TAccesoJugador = 0;
+    [SerializeField] private ActivarPuerta[] puertas;
+    private List<MoverPuerta> puertasAMover = new List<MoverPuerta>();
+    public int tAccesoJugador = 0;
+    private int sfxToPlay;
     private bool jugadorEnArea = false;
-    private bool puertaAbierta = false;
+    // ELIMINAR: private bool puertaAbierta = false;
 
-    private FullScreenController FullScreenController;
-    // Start is called before the first frame update
     void Start()
     {
         ActualizarPantalla();
+        puertas = FindObjectsOfType<ActivarPuerta>();
     }
 
-    // Update is called once per frame
-   
     public void ActivaPuerta()
     {
-        if(TAccesoJugador == 0)
+        if (tAccesoJugador == 0)
         {
-            Debug.Log("No llaves");
+            Debug.Log("No hay llaves");
             return;
         }
 
-        jugadorEnArea = activarPuerta.ChecarJugador();
-        if (jugadorEnArea)
+        // Limpiar listas cada vez
+        puertasAMover.Clear();
+        jugadorEnArea = false;
+
+        foreach (ActivarPuerta puerta in puertas)
         {
-            if (!puertaAbierta)
+            if (puerta.ChecarJugador())
             {
-                /*    Debug.Log("Cerrar");
-                    puerta.AbrirPuerta(false);
-                    puertaAbierta = false;
+                jugadorEnArea = true;
+                MoverPuerta moverPuerta = puerta.PuertaAMover();
+                if (moverPuerta != null)
+                {
+                    puertasAMover.Add(moverPuerta);
                 }
-                else
-                {*/
-                Debug.Log("Abrir");
-                puerta.AbrirPuerta(true);
-                puertaAbierta = true;
             }
-            TAccesoJugador--;
-            Debug.Log("LLave Usada");
-        }
-        else 
-        { 
-            Debug.Log("No se puede usar la llave aqui"); 
         }
 
-            ActualizarPantalla();
+        if (jugadorEnArea && puertasAMover.Count > 0)
+        {
+            // Abrir TODAS las puertas sin verificar puertaAbierta
+            foreach (MoverPuerta puerta in puertasAMover)
+            {
+                Debug.Log("Abriendo puerta: " + puerta.gameObject.name);
+                puerta.AbrirPuerta(true);
+                sfxToPlay = 23;
+                AudioManager.instance.SoundEffects(sfxToPlay);
+            }
+
+            tAccesoJugador--;
+            Debug.Log("Llave Usada. Puertas abiertas: " + puertasAMover.Count);
+        }
+        else
+        {
+            Debug.Log("No se puede usar la llave aqui");
+        }
+
+        ActualizarPantalla();
     }
 
-    public void Actualiza(int Agrega)
+    // ... el resto del código igual
+
+
+public void Actualiza(int Agrega)
     {
-        TAccesoJugador += Agrega;
+        tAccesoJugador += Agrega;
         ActualizarPantalla();
     }
 
@@ -65,7 +79,7 @@ public class TAccesoContador : MonoBehaviour
     {
         if (TAcceso != null)
         {
-            TAcceso.text = "X" + TAccesoJugador.ToString();
+            TAcceso.text = "X" + tAccesoJugador.ToString();
         }
         else
         {
