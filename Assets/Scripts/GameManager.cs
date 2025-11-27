@@ -15,6 +15,12 @@ public class GameManager : MonoBehaviour
 
     public string levelToLoad;
 
+    //NIVEL
+    public GameObject LevelController;
+    private LevelController nivel;
+
+    public GameObject Jugador;
+
     private void Awake()
     {
         instance = this;
@@ -23,7 +29,10 @@ public class GameManager : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        //posicionRespawn = PlayerMovement.instance.transform.position;
+
+        nivel = LevelController.GetComponent<LevelController>();
+        posicionRespawn = nivel.CheckPointIncial.transform.position;
+        
         UIManager.instance.pauseScreen.SetActive(false);
         //AddCoins(0);
     }
@@ -52,9 +61,11 @@ public class GameManager : MonoBehaviour
         //PlayerMovement.instance.gameObject.SetActive(false);
         //CameraController.instance.CinemaBrain.enabled = false;
         UIManager.instance.fadeToBlack = true;
-
+        
         yield return new WaitForSeconds(2f);
 
+        Jugador.transform.position = posicionRespawn;
+        
         UIManager.instance.fadeFromBlack = true;
         //PlayerMovement.instance.transform.position = posicionRespawn;
         //CameraController.instance.CinemaBrain.enabled = true;
@@ -68,7 +79,7 @@ public class GameManager : MonoBehaviour
         posicionRespawn = newSpawnPoint;
         sfxToPlay = 9;
         AudioManager.instance.SoundEffects(sfxToPlay);
-        //Debug.Log("Spawn Set");
+        Debug.Log("Spawn Set en :" + posicionRespawn);
     }
 
     public void AddCoins(int coinsToAdd)

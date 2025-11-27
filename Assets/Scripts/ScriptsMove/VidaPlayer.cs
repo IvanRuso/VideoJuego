@@ -18,6 +18,7 @@ public class VidaPlayer : MonoBehaviour
     public int EscudoMaxima = 2;
     public int Escudo = 1;
     private int sfxToPlay;
+    
 
     //private FullScreenController FullScreenController;
 
@@ -32,8 +33,10 @@ public class VidaPlayer : MonoBehaviour
         {
             Debug.LogError("No se encontro un objeto con la etiqueta 'Player' que tenga el script VidaJugador");
         }*/
-
+        
         VidaActual();
+
+        
     }
 
     //Prueba
@@ -146,7 +149,7 @@ public class VidaPlayer : MonoBehaviour
 
         if (Vida >= VidaMaxima)
         {
-            Debug.Log("Maximo");
+            //Debug.Log("Maximo");
             return false;
         }
 
@@ -162,7 +165,7 @@ public class VidaPlayer : MonoBehaviour
 
         VidaActual();
 
-        Debug.Log("Vida Curada. Vida actual: " + Vida);
+        //Debug.Log("Vida Curada. Vida actual: " + Vida);
         return true;
     }
 
@@ -171,7 +174,7 @@ public class VidaPlayer : MonoBehaviour
 
         if (Escudo >= EscudoMaxima)
         {
-            Debug.Log("Maximo");
+            //Debug.Log("Maximo");
             return false;
         }
 
@@ -187,7 +190,7 @@ public class VidaPlayer : MonoBehaviour
 
         VidaActual();
 
-        Debug.Log("Escudo Regenerado. Escudo actual: " + Escudo);
+        //Debug.Log("Escudo Regenerado. Escudo actual: " + Escudo);
         return true;
     }
     /*private void OnParticleCollision(GameObject other)
@@ -219,14 +222,20 @@ public class VidaPlayer : MonoBehaviour
             }
         }
         */
-    void Update()
+    private void Update()
     {
-        if(Vida == 0)
+
+
+        if (Vida == 0)
         {
-            string sceneName = SceneManager.GetActiveScene().name;
+           
+            string sceneName = "";
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+
+
         }
-        
     }
+
+    
 
 }

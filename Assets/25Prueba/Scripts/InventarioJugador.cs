@@ -22,6 +22,8 @@ public class InventarioJugador : MonoBehaviour
     private EscudoContador escudo;
     private GranadaContador granada;
     private TAccesoContador tAcceso;
+
+    private RespawnJugador TeleportSeguro;
     
 
     // Start is called before the first frame update
@@ -31,6 +33,7 @@ public class InventarioJugador : MonoBehaviour
         escudo = this.GetComponent<EscudoContador>();
         granada= this.GetComponent<GranadaContador>();
         tAcceso = this.GetComponent<TAccesoContador>();
+        TeleportSeguro = this.GetComponent<RespawnJugador>();
 
         //se hace trasparente todos los contornos ecepto en donde esta el espacioInventario (en este caso es el primer item, pero puede cambiarse)
         Color contornoApagar;
@@ -118,11 +121,12 @@ public class InventarioJugador : MonoBehaviour
                 //Debug.Log("espacio en el inventario " + (itemId + 1) + "/" + unidades.Length + " : se uso escudo");
                 break;
             case 2:
-                tAcceso.ActivaPuerta();
-                //Debug.Log("espacio en el inventario " + (itemId + 1) + "/" + unidades.Length + " : se uso tarjeta de acceso");
+                TeleportSeguro.RespawnPlayer();
+                Debug.Log("espacio en el inventario " + (itemId + 1) + "/" + unidades.Length + " : se uso granada electrica");
                 break;
             case 3:
-                Debug.Log("espacio en el inventario " + (itemId + 1) + "/" + unidades.Length + " : se uso granada electrica");
+                tAcceso.ActivaPuerta();
+                //Debug.Log("espacio en el inventario " + (itemId + 1) + "/" + unidades.Length + " : se uso tarjeta de acceso");
                 break;
             case 4:
                 granada.LanzaGranada();
@@ -153,24 +157,24 @@ public class InventarioJugador : MonoBehaviour
         {
             inventario[1].color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
         }
+        //granada electrica
+       if (TeleportSeguro.disponible)
+       {
+           inventario[2].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+       }
+       else
+       {
+           inventario[2].color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
+       }
         //tarjeta acceso
         if (tAcceso.tAccesoJugador != 0)
-        {
-            inventario[2].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-        }
-        else
-        {
-            inventario[2].color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
-        }
-        /*granada electrica
-        if (botiquin.BotiquinJugador != 0)
         {
             inventario[3].color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         }
         else
         {
             inventario[3].color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
-        }*/
+        }
         //granad Humo
         if (granada.GranadasJugador != 0)
         {

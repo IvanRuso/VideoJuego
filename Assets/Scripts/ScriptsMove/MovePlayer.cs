@@ -75,6 +75,14 @@ public class MovePlayer : MonoBehaviour
     private int sfxToPlay;
     private bool pasoIz;
 
+    //LEVELCONTROLLER
+
+    [SerializeField] GameObject LevelController;
+    private LevelController nivel;
+    
+    //private bool jugadorMuerto = false;//mientras el jugador ese vivo podra hacer acciones (caminar, correr, deslizarse)
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,12 +93,18 @@ public class MovePlayer : MonoBehaviour
         staminaActual = maxStamina;
         //barraStamina.maxValue = maxStamina;
         //barraStamina.value = staminaActual;
+
+        //LEVEL CONTROLLER
+   
+        nivel = LevelController.GetComponent<LevelController>();
+        //CheckpointInicio = nivel.CheckPointIncial;
+        this.transform.position = nivel.CheckPointIncial.transform.position;
+        
     }
 
     // Update is called once per frame
     void Update() //LOGICA
     {
-        
         //evita que el jugador haga alguna accion mientras se hace el dash
         if (dash)
         {
