@@ -290,6 +290,7 @@ GameObject:
   - component: {fileID: 2688622716447036054}
   - component: {fileID: 7158874593363913804}
   - component: {fileID: 3734449951254286655}
+  - component: {fileID: 3179130941590179238}
   m_Layer: 0
   m_Name: JugadorRender
   m_TagString: Untagged
@@ -398,6 +399,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3179130941590179238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7638702778794274661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a0abe913cbe434982e1e9944200751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghost: {fileID: 4613579630680495943, guid: 2cbe17f1b2a0bb14e9fd6a6ee8e4d64c, type: 3}
+  pool: []
+  speed: 10
+  _color: {r: 0.31706125, g: 0.7075472, b: 0.40498152, a: 0}
 --- !u!1 &9185601841676138394
 GameObject:
   m_ObjectHideFlags: 0

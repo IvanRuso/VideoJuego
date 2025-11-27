@@ -105,9 +105,11 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update() //LOGICA
     {
+         
         //evita que el jugador haga alguna accion mientras se hace el dash
         if (dash)
         {
+            ghostSpriteJugador.jugador.ghost_Skill();//agrega el efecto de fantasma al dash
             return;
         }
 
@@ -215,7 +217,7 @@ public class MovePlayer : MonoBehaviour
                 StopCoroutine(regenerando);
             }
             regenerando = StartCoroutine(RegenararStamina());//instacia la corutina
-
+            ghostSpriteJugador.jugador.ghost_Skill();//agrega el efecto de fantasma al correr
         }
         /*else if (agachado)//velocidad al agacharse
         {
@@ -319,7 +321,8 @@ public class MovePlayer : MonoBehaviour
         dash = true;
         dashDireccion = transform.forward;
         rb.AddForce(dashDireccion * dashFuerza, ForceMode.VelocityChange);//aplicando impluso 
-        Debug.Log("dash no disponible");
+        
+        //Debug.Log("dash no disponible");
         yield return new WaitForSeconds(dashDuracion);//solo se aplica por la duracion del dash
 
         dash = false;
