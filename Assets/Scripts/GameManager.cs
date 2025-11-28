@@ -114,6 +114,19 @@ public class GameManager : MonoBehaviour
             AudioManager.instance.SoundEffects(sfxToPlay);
         }
     }
+    //pantalla de salir del nivel 
+    public void escaparNivel()
+    {
+        UIManager.instance.EscapeNivel.SetActive(true);//svtiva la pantalla de fin de nivel
+        //UIManager.instance.CloseOptions();
+        Time.timeScale = 0f;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        sfxToPlay = 7;
+        AudioManager.instance.SoundEffects(sfxToPlay);
+
+    }
 
     public IEnumerator LevelEndWaiter()
     {

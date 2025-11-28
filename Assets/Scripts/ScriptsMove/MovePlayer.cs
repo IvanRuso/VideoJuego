@@ -156,7 +156,7 @@ public class MovePlayer : MonoBehaviour
         {
             corriendo = true;
         }
-        if (Input.GetButton("Sprint") == false /*|| agachado == true*/ || staminaActual <= 0)
+        if (Input.GetButton("Sprint") == false /*|| agachado == true*/ || staminaActual <= 0 || direccion.magnitude < 0.1f)
         {
             corriendo = false;
         }

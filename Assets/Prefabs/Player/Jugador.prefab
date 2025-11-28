@@ -291,6 +291,7 @@ GameObject:
   - component: {fileID: 7158874593363913804}
   - component: {fileID: 3734449951254286655}
   - component: {fileID: 3179130941590179238}
+  - component: {fileID: 2257684558294291574}
   m_Layer: 0
   m_Name: JugadorRender
   m_TagString: Untagged
@@ -355,7 +356,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.13777146, g: 0.6792453, b: 0.3213219, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -414,7 +415,19 @@ MonoBehaviour:
   ghost: {fileID: 4613579630680495943, guid: 2cbe17f1b2a0bb14e9fd6a6ee8e4d64c, type: 3}
   pool: []
   speed: 10
-  _color: {r: 0.31706125, g: 0.7075472, b: 0.40498152, a: 0}
+  _color: {r: 0.8773585, g: 0.18623178, b: 0.87118626, a: 0}
+--- !u!114 &2257684558294291574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7638702778794274661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8566a17db76a2a4fadb29817b6e4fd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9185601841676138394
 GameObject:
   m_ObjectHideFlags: 0

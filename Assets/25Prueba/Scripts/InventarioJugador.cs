@@ -121,7 +121,7 @@ public class InventarioJugador : MonoBehaviour
                 //Debug.Log("espacio en el inventario " + (itemId + 1) + "/" + unidades.Length + " : se uso escudo");
                 break;
             case 2:
-                TeleportSeguro.RespawnPlayer();
+                TeleportSeguro.RespawnPlayer(0);
                 Debug.Log("espacio en el inventario " + (itemId + 1) + "/" + unidades.Length + " : se uso granada electrica");
                 break;
             case 3:

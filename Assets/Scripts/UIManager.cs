@@ -13,6 +13,10 @@ public class UIManager : MonoBehaviour
     public float fadeSpeed;
     public bool fadeToBlack, fadeFromBlack;
 
+    public Image AnimalAtrapado;
+    private Image Screen;
+    public GameObject EscapeNivel;
+
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI coinText;
 
@@ -39,24 +43,41 @@ public class UIManager : MonoBehaviour
     {
         if (fadeToBlack)
         {
-            PantallaNegra.color = new Color(PantallaNegra.color.r, PantallaNegra.color.g, PantallaNegra.color.b, Mathf.MoveTowards(PantallaNegra.color.a, 1f, fadeSpeed * Time.deltaTime));
+            Screen.color = new Color(Screen.color.r, Screen.color.g, Screen.color.b, Mathf.MoveTowards(Screen.color.a, 1f, fadeSpeed * Time.deltaTime));
 
-            if(PantallaNegra.color.a == 1f)
+            if(Screen.color.a == 1f)
             {
                 fadeToBlack = false;
             }
         }
         if (fadeFromBlack)
         {
-            PantallaNegra.color = new Color(PantallaNegra.color.r, PantallaNegra.color.g, PantallaNegra.color.b, Mathf.MoveTowards(PantallaNegra.color.a, 0f, fadeSpeed * Time.deltaTime));
+            Screen.color = new Color(Screen.color.r, Screen.color.g, Screen.color.b, Mathf.MoveTowards(Screen.color.a, 0f, fadeSpeed * Time.deltaTime));
 
-            if (PantallaNegra.color.a == 0f)
+            if (Screen.color.a == 0f)
             {
                 fadeFromBlack = false;
             }
         }
     }
 
+    public void SelectScreenToFade(int i)
+    {
+        switch (i)
+        {
+            case 0:
+                Screen = PantallaNegra;
+                break;
+            case 1:
+                Screen = AnimalAtrapado;
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    
     public void Resume()
     {
         GameManager.instance.PauseUnpause();

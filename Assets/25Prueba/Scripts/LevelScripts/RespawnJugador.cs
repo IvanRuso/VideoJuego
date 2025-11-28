@@ -38,11 +38,12 @@ public class RespawnJugador : MonoBehaviour
     }
 
 
-    public void RespawnPlayer()//envia al jugador al punto de respawn 
+    public void RespawnPlayer(int screenToFade)//envia al jugador al punto de respawn y muestra la oantalla que corresponde 
+                                               //0: usaste el portal, 1: el anima ha sido asegurado, 2: de vuelta a la nave
     {
         if (disponible)
         {
-            StartCoroutine(RespawnWaiter());
+            StartCoroutine(RespawnWaiter(screenToFade));
             
         }
 
@@ -53,9 +54,9 @@ public class RespawnJugador : MonoBehaviour
         respawnPoint = newSpawnPoint;
     }
 
-    public IEnumerator RespawnWaiter()
+    public IEnumerator RespawnWaiter(int i)
     {
-        
+        UIManager.instance.SelectScreenToFade(i);//establece que pantalla   queremos 
         UIManager.instance.fadeToBlack = true;
         disponible = false;
         yield return new WaitForSeconds(2f);
