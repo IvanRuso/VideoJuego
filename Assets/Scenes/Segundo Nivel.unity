@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.02971158, g: 0.017666405, b: 0.019892825, a: 1}
+  m_IndirectSpecularColor: {r: 0.029566623, g: 0.017654888, b: 0.019750454, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -175,9 +175,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6906221337267971244, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1121565355949605897, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
       propertyPath: m_Name
       value: Paso_Puerta (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089259020267038044, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -394,9 +410,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 943727341956955920, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1253263105426710668, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
       propertyPath: m_Name
       value: PuertaReal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253263105426710668, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5463675585718572965, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -436,6 +460,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5463675585718572965, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245478235293125516, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4356,9 +4384,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6906221337267971244, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1121565355949605897, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
       propertyPath: m_Name
       value: Paso_Puerta (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089259020267038044, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6177,9 +6221,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6906221337267971244, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1121565355949605897, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
       propertyPath: m_Name
       value: Paso (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089259020267038044, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6582,9 +6642,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6906221337267971244, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1121565355949605897, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
       propertyPath: m_Name
       value: Paso_Puerta (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089259020267038044, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6935,9 +7011,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6906221337267971244, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1121565355949605897, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
       propertyPath: m_Name
       value: Paso (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089259020267038044, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8561,6 +8653,8 @@ MonoBehaviour:
   fadeSpeed: 1
   fadeToBlack: 0
   fadeFromBlack: 0
+  AnimalAtrapado: {fileID: 0}
+  EscapeNivel: {fileID: 0}
   healthText: {fileID: 0}
   coinText: {fileID: 0}
   pauseScreen: {fileID: 653525777}
@@ -9536,9 +9630,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6906221337267971244, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1121565355949605897, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
       propertyPath: m_Name
       value: Paso (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089259020267038044, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10476,9 +10586,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 943727341956955920, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1253263105426710668, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
       propertyPath: m_Name
       value: PuertaReal (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253263105426710668, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5463675585718572965, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
       propertyPath: m_LocalScale.z
@@ -10522,6 +10640,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5463675585718572965, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245478235293125516, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10659,6 +10781,10 @@ PrefabInstance:
     - target: {fileID: 4776942980368274638, guid: 6832274eba6e02e478dc7e137d9100ad, type: 3}
       propertyPath: m_Name
       value: PuntoPatrulla (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4776942980368274638, guid: 6832274eba6e02e478dc7e137d9100ad, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7439078105009645903, guid: 6832274eba6e02e478dc7e137d9100ad, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11054,9 +11180,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6906221337267971244, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1121565355949605897, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
       propertyPath: m_Name
       value: Paso (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089259020267038044, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11498,9 +11640,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 943727341956955920, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1253263105426710668, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
       propertyPath: m_Name
       value: PuertaReal (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253263105426710668, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5463675585718572965, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
       propertyPath: m_LocalScale.z
@@ -11544,6 +11694,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5463675585718572965, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245478235293125516, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11729,9 +11883,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6906221337267971244, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1121565355949605897, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
       propertyPath: m_Name
       value: Paso
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089259020267038044, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12667,6 +12837,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6906221337267971244, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1121565355949605897, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
       propertyPath: m_Name
       value: Paso_Puerta
@@ -12674,6 +12852,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089259020267038044, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13958,9 +14144,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 943727341956955920, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1253263105426710668, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
       propertyPath: m_Name
       value: PuertaReal (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253263105426710668, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5463675585718572965, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
       propertyPath: m_LocalScale.z
@@ -14004,6 +14198,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5463675585718572965, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245478235293125516, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -14440,9 +14638,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6906221337267971244, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1121565355949605897, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
       propertyPath: m_Name
       value: Paso
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089259020267038044, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15370,9 +15584,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6906221337267971244, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1121565355949605897, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
       propertyPath: m_Name
       value: Paso_Puerta (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089259020267038044, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15457,9 +15687,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 943727341956955920, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1253263105426710668, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
       propertyPath: m_Name
       value: PuertaReal (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253263105426710668, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5463675585718572965, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
       propertyPath: m_LocalScale.z
@@ -15503,6 +15741,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5463675585718572965, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245478235293125516, guid: 4910cd1336b0fe34e8b09cd0e3c68c9a, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -15811,9 +16053,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6906221337267971244, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1121565355949605897, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
       propertyPath: m_Name
       value: Paso (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089259020267038044, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15888,7 +16146,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1824143435
 Transform:
@@ -19191,9 +19449,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6906221337267971244, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1121565355949605897, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
       propertyPath: m_Name
       value: Paso (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089259020267038044, guid: d63132b57428d3c4486b0938dc245409, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

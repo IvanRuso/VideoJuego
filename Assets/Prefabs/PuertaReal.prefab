@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 1589635624659939262}
   - component: {fileID: 1578011514586739803}
   - component: {fileID: 5235412399033559523}
+  - component: {fileID: 1497735629519019145}
   m_Layer: 0
   m_Name: PuertaRender
   m_TagString: Untagged
@@ -220,3 +221,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanciaApertura: 5
   velocidad: 2
+--- !u!208 &1497735629519019145
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7245478235293125516}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.7, y: 1.25, z: 0.076000005}
+  m_MoveThreshold: 0.3
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: -1.7, y: 1.35, z: 0}
+  m_TimeToStationary: 1
