@@ -165,6 +165,8 @@ public class MovePlayer : MonoBehaviour
         //dectecta cuando se hace el dash
         if (Input.GetButtonDown("Dash") && dashDisponible && staminaActual > 0 && direccion.magnitude > 0.1f)//solo se detecta el dash si esta disponible y la estamina es mayor a 0
         {
+            sfxToPlay = 24;
+            AudioManager.instance.SoundEffects(sfxToPlay);
             StartCoroutine(Dash());
             staminaActual -= dashStamina;
             StaminaBar.fillAmount = staminaActual / maxStamina;
@@ -196,6 +198,7 @@ public class MovePlayer : MonoBehaviour
         if (dash)
         {
             corriendo = false ;
+            
             return;
         }
 
