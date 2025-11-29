@@ -42,6 +42,7 @@ public class AIROVICA : MonoBehaviour
         {
             StartCoroutine(EsperarEnPunto());
         }
+        //Debug.Log("Angulo " + this.transform.rotation.y);
     }
 
     IEnumerator EsperarEnPunto()
