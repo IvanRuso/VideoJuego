@@ -224,18 +224,21 @@ public class VidaPlayer : MonoBehaviour
         */
     private void Update()
     {
+        /*
 
 
         if (Vida == 0)
         {
            
             string sceneName = "";
-            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+            //SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
 
 
         }
+        */
     }
 
-    
+
+
 
 }

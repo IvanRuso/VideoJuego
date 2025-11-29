@@ -6,7 +6,10 @@ public class Cofre : MonoBehaviour
 {
     public GameObject[] Recursos;
 
-    public float Distancia = 1.0f;
+    public Transform Cofre_Tapa;
+
+    public float DistanciaH = 1.0f;
+    public float DistanciaV = 1.0f;
 
     private bool Abierto = false;
     void Start()
@@ -23,9 +26,14 @@ public class Cofre : MonoBehaviour
     //Logica Interacción
     private void OnTriggerStay(Collider other)
     {
+        if (Abierto)
+        {
+            return;
+        }
+
         if (other.CompareTag("Player"))
         {
-            if (Input.GetButtonDown("Fire2"))
+            if (Input.GetButtonDown("Fire2") && !Abierto)
             {
                 AbrirCofre();
             }
@@ -44,8 +52,16 @@ public class Cofre : MonoBehaviour
         int randomIndex = Random.Range(0,Recursos.Length);
         GameObject Drop = Recursos[randomIndex];
 
-        Vector3 Spawn = transform.position + Vector3.back * Distancia;
-        Instantiate(Drop, Spawn, Quaternion.identity);
+        Vector3 SpawnH = transform.position + transform.forward * DistanciaH;
+
+        Vector3 SpwanReal = SpawnH + Vector3.up * DistanciaV;
+
+        Instantiate(Drop, SpwanReal, Quaternion.identity);
+
+        if (Cofre_Tapa != null)
+        {
+            Cofre_Tapa.Rotate(0f, 25f, 0f, Space.Self);
+        }
 
         Abierto = true;
        
