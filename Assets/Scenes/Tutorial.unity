@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.029566623, g: 0.017654888, b: 0.019750454, a: 1}
+  m_IndirectSpecularColor: {r: 0.02971158, g: 0.017666405, b: 0.019892825, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -190,8 +190,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -254,10 +254,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 780182685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.564}
-  m_AnchorMax: {x: 0.9842916, y: 0.9678519}
-  m_AnchoredPosition: {x: -35.962585, y: -25.791412}
-  m_SizeDelta: {x: -100.0737, y: -96.421295}
+  m_AnchorMin: {x: 0.5755835, y: 0.74200004}
+  m_AnchorMax: {x: 0.934, y: 0.82600003}
+  m_AnchoredPosition: {x: 0.30444336, y: -1.019989}
+  m_SizeDelta: {x: 1.39099, y: -1.3140001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &41077254 stripped
 Transform:
@@ -1801,8 +1801,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2620,8 +2620,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 608.36, y: 359.87}
-  m_SizeDelta: {x: 470.9621, y: 142.8106}
+  m_AnchoredPosition: {x: 489.344, y: 391.864}
+  m_SizeDelta: {x: 708.994, y: 78.823}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &732350125
 MonoBehaviour:
@@ -2670,7 +2670,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 62.95
+  m_fontSize: 65.8
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3066,8 +3066,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4705,8 +4705,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4769,10 +4769,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 780182685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 37, y: 6}
-  m_SizeDelta: {x: 303.5364, y: 50}
+  m_AnchorMin: {x: 0.42000002, y: 0.44400004}
+  m_AnchorMax: {x: 0.62, y: 0.52900004}
+  m_AnchoredPosition: {x: 0.7709961, y: 2.677002}
+  m_SizeDelta: {x: -2.776001, y: -1.3539963}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1376459950
 PrefabInstance:
@@ -5925,8 +5925,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
