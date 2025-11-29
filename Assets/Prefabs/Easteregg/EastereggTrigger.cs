@@ -2,27 +2,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class EasterEggTrigger : MonoBehaviour
+public class EasterEggInteract : MonoBehaviour
 {
-    public Image imagenEasterEgg;
-    public float tiempoVisible = 3f;
+    public Image imagenEasterEgg;    // Arrastra aquí la imagen UI desde el Canvas
+    public float tiempoMostrado = 3f;
 
     private bool jugadorCerca = false;
-
-    void Update()
-    {
-        if (jugadorCerca && Input.GetKeyDown(KeyCode.F))
-        {
-            StartCoroutine(MostrarImagen());
-        }
-    }
-
-    private IEnumerator MostrarImagen()
-    {
-        imagenEasterEgg.gameObject.SetActive(true);
-        yield return new WaitForSeconds(tiempoVisible);
-        imagenEasterEgg.gameObject.SetActive(false);
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -38,5 +23,21 @@ public class EasterEggTrigger : MonoBehaviour
         {
             jugadorCerca = false;
         }
+    }
+
+    private void Update()
+    {
+        // ? CAMBIO A BARRA ESPACIADORA
+        if (jugadorCerca && Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(MostrarEasterEgg());
+        }
+    }
+
+    IEnumerator MostrarEasterEgg()
+    {
+        imagenEasterEgg.gameObject.SetActive(true);
+        yield return new WaitForSeconds(tiempoMostrado);
+        imagenEasterEgg.gameObject.SetActive(false);
     }
 }
