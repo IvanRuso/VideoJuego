@@ -18,6 +18,8 @@ public class AIROVICA : MonoBehaviour
     private NavMeshAgent agente;
     private Transform puntoRespawn;
 
+    public float AnguloFrontal;
+
     void Start()
     {
         jugador = GameObject.FindGameObjectWithTag("Player")?.transform;
@@ -33,6 +35,15 @@ public class AIROVICA : MonoBehaviour
 
     void Update()
     {
+        Vector3 f = transform.forward;
+
+        float ang = Mathf.Atan2(f.x, f.z) * Mathf.Rad2Deg;
+        if (ang < 0) ang += 360;
+
+        AnguloFrontal = ang;
+
+
+
         if (persiguiendo && jugador != null)
         {
             agente.SetDestination(jugador.position);

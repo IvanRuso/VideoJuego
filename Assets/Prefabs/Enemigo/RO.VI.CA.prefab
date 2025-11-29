@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6883904085787413533}
   - component: {fileID: 3037103318748023770}
   - component: {fileID: 8130079396624302150}
+  - component: {fileID: 9037882840322816057}
   m_Layer: 0
   m_Name: RO.VI.CA
   m_TagString: ROVICA
@@ -98,6 +99,34 @@ MonoBehaviour:
   tiempoEsperaPunto: 2
   tiempoEsperaAntesDeVolver: 1
   persiguiendo: 0
+  AnguloFrontal: 0
+--- !u!54 &9037882840322816057
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4566626382867985105}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4658809053245854301
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,9 +286,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4423956190074495013}
   - component: {fileID: 8418790724787840722}
+  - component: {fileID: 3473495037918432831}
+  - component: {fileID: 5221000328970277944}
   - component: {fileID: 6566356303040698}
+  - component: {fileID: 1733029873278802795}
   m_Layer: 0
-  m_Name: RenderSprite
+  m_Name: RSE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,8 +306,8 @@ Transform:
   m_GameObject: {fileID: 9162045079981667499}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.00000047684, y: 0.47, z: 0}
+  m_LocalScale: {x: 0.2151386, y: 0.2151386, z: 0.1075693}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9135069276375439216}
@@ -321,17 +353,43 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7080a80b85e3db74c921daee65133a4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 2
-  m_Size: {x: 1, y: 1}
+  m_DrawMode: 0
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3473495037918432831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9162045079981667499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f505bf712c8147b185f3811f83c55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FreezeXZAxis: 0
+--- !u!114 &5221000328970277944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9162045079981667499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f505bf712c8147b185f3811f83c55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FreezeXZAxis: 0
 --- !u!95 &6566356303040698
 Animator:
   serializedVersion: 5
@@ -353,3 +411,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1733029873278802795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9162045079981667499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db7b7d656baef046b39e40e43bef4b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RSE: {fileID: 0}
+  Renderizado: {fileID: 0}
+  AIAngulo: {fileID: 0}

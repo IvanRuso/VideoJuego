@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.02971158, g: 0.017666405, b: 0.019892825, a: 1}
+  m_IndirectSpecularColor: {r: 0.029566623, g: 0.017654888, b: 0.019750454, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -874,6 +874,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: RO.VI.CA
       objectReference: {fileID: 0}
+    - target: {fileID: 4658809053245854301, guid: a37ed4fb5a6a1624190a6a0492f732f2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8130079396624302150, guid: a37ed4fb5a6a1624190a6a0492f732f2, type: 3}
+      propertyPath: puntosPatrulla.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8130079396624302150, guid: a37ed4fb5a6a1624190a6a0492f732f2, type: 3}
+      propertyPath: puntosPatrulla.Array.data[0]
+      value: 
+      objectReference: {fileID: 1057538981}
+    - target: {fileID: 8130079396624302150, guid: a37ed4fb5a6a1624190a6a0492f732f2, type: 3}
+      propertyPath: puntosPatrulla.Array.data[1]
+      value: 
+      objectReference: {fileID: 41077254}
     - target: {fileID: 9135069276375439216, guid: a37ed4fb5a6a1624190a6a0492f732f2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -28.703928
@@ -2797,7 +2813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4566626382867985105, guid: a37ed4fb5a6a1624190a6a0492f732f2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8130079396624302150, guid: a37ed4fb5a6a1624190a6a0492f732f2, type: 3}
       propertyPath: puntosPatrulla.Array.size
