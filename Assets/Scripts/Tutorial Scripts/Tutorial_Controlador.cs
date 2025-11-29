@@ -16,10 +16,11 @@ public class Tutorial_Controlador : MonoBehaviour
     // Array de mensajes para iterar más fácilmente
     private string[] tutorialMessages;
 
-    private const string M2 = "Desplázate con la cruceta y navega por tu inventario con Q y E";
-    private const string M3 = "Presiona Shift para correr" +
+    private const string M2 = "Desplázate con W,A,S,D y navega por tu inventario con Q y E";
+    private const string M3 = "Presiona Shift para correr," +
                              " Ctrl para barrerte";
     private const string M4 = "Presiona F para utilizar el inventario";
+    private const string M5 = "Encuentra a la forma de vida y regresa a la nave";
 
     private const float Espera = 5f;
 
@@ -29,7 +30,7 @@ public class Tutorial_Controlador : MonoBehaviour
         if (TutorialText != null)
         {
             // Inicializar el array de mensajes
-            tutorialMessages = new string[] { M2, M3, M4 };
+            tutorialMessages = new string[] { M5, M2, M3, M4 };
 
             // Almacenar la referencia a la corutina
             tutorialCoroutine = StartCoroutine(SecuenciaTutorial());

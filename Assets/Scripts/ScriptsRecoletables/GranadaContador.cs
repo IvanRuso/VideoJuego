@@ -11,8 +11,9 @@ public class GranadaContador : MonoBehaviour
 
     //Prueba
     public GameObject GranadaPrefab;
+    
     public Transform PuntoLanzamiento;
-    public float FLanzamiento = 5f;
+    public float FLanzamiento = 3f;
 
     public float Explosion = 3f;
     // Start is called before the first frame update

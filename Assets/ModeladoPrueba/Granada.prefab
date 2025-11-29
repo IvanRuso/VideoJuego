@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExplosionGranada: {fileID: 100002, guid: f7efb0d9df2264096af57128df85dddb, type: 3}
   Explota: 0
-  Explosion: 2
+  Explosion: 3
 --- !u!1 &5023162536715940460
 GameObject:
   m_ObjectHideFlags: 0
